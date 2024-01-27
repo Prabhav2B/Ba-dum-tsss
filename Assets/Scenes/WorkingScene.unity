@@ -266,6 +266,21 @@ PrefabInstance:
       propertyPath: popAmount
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1737653695152250147, guid: 5fb832bfdf40d344c9e3edac95fab919,
+        type: 3}
+      propertyPath: popColor.b
+      value: 0.0905661
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737653695152250147, guid: 5fb832bfdf40d344c9e3edac95fab919,
+        type: 3}
+      propertyPath: popColor.g
+      value: 0.9679909
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737653695152250147, guid: 5fb832bfdf40d344c9e3edac95fab919,
+        type: 3}
+      propertyPath: popColor.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
