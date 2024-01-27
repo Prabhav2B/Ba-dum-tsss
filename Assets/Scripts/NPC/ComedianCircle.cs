@@ -89,4 +89,14 @@ public class ComedianCircle : MonoBehaviour
     {
         return _comedian.GetJokeTime();
     }
+
+    public void FizzleJoke(AudioClip chirp)
+    {
+        PlayChirping(chirp);
+        var billboards = GetComponentsInChildren<BillboardSprite>();
+        foreach (var billboard in billboards)
+        {
+            billboard.JokeFizzle();
+        }
+    }
 }

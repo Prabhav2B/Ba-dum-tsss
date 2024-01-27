@@ -44,9 +44,13 @@ public class JokeDeliveryManager : MonoBehaviour
         if (jokeTime - punchLineTime > 0.0f && jokeTime - punchLineTime < jokeHitTolerance)
         {
             Debug.Log("Hit");
+            //Kill Group and Remove group from list
         }
         else
+        {
             Debug.Log("Miss");
+            CurrentComedyCircle.FizzleJoke(cricketChirp);
+        }
 
     }
 

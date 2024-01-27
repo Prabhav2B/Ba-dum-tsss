@@ -53,10 +53,19 @@ MonoBehaviour:
     punchlineTimeStampInSeconds: 14
   - joke: {fileID: 8300000, guid: 2367002e79efd7a47a97a6efdadf1aa9, type: 3}
     punchlineTimeStampInSeconds: 7
-  - joke: {fileID: 8300000, guid: a9612d17081f58d40b4091ab52755702, type: 3}
-    punchlineTimeStampInSeconds: 82
   - joke: {fileID: 8300000, guid: b6cae66e3909da24bbe74bfd7b996592, type: 3}
     punchlineTimeStampInSeconds: 8
   - joke: {fileID: 8300000, guid: 34d414eb39012fe40b9b4733e9d6b3b3, type: 3}
     punchlineTimeStampInSeconds: 8
+  - joke: {fileID: 8300000, guid: 0ee4865810849ac45aa42063406b994c, type: 3}
+    punchlineTimeStampInSeconds: 7
+  - joke: {fileID: 8300000, guid: 942f4adc654b26b4db2d3d0f4364006c, type: 3}
+    punchlineTimeStampInSeconds: 35
+  - joke: {fileID: 8300000, guid: 99143f337b8e7cc40afc467d31ac8c40, type: 3}
+    punchlineTimeStampInSeconds: 15
+  - joke: {fileID: 8300000, guid: b7c6c41a73a5d46458c2b7b991244f51, type: 3}
+    punchlineTimeStampInSeconds: 22
+  - joke: {fileID: 8300000, guid: a9612d17081f58d40b4091ab52755702, type: 3}
+    punchlineTimeStampInSeconds: 82
   cricketChirp: {fileID: 0}
+  jokeHitTolerance: 1
