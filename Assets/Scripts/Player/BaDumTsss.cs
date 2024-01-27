@@ -8,11 +8,14 @@ public class BaDumTsss : MonoBehaviour
 
     [SerializeField] private float popAmount = 1.5f;
     [SerializeField] private float popTime = 0.1f;
+    [SerializeField] private Color popColor = Color.white;
     
+    [Space (10)]
     [SerializeField] private SpriteRenderer drumSpriteBa;
     [SerializeField] private SpriteRenderer drumSpriteDum;
     [SerializeField] private SpriteRenderer drumSpriteTss;
-
+    
+    [Space (10)]
     [SerializeField] private List<AudioClip> BaClips;
     [SerializeField] private List<AudioClip> DumClips;
     [SerializeField] private List<AudioClip> TssClips;
@@ -26,6 +29,10 @@ public class BaDumTsss : MonoBehaviour
     private Vector3 originalScaleBa;
     private Vector3 originalScaleDum;
     private Vector3 originalScaleTss;
+    
+    private Color originalColorBa;
+    private Color originalColorDum;
+    private Color originalColorTss;
 
     private void Start()
     {
@@ -38,6 +45,11 @@ public class BaDumTsss : MonoBehaviour
         originalScaleBa = transformBa.localScale;
         originalScaleDum = transformDum.localScale;
         originalScaleTss = transformTss.localScale;
+
+        originalColorBa = drumSpriteBa.color;
+        originalColorDum = drumSpriteDum.color;
+        originalColorTss = drumSpriteTss.color;
+        
     }
 
     public void OnBa(InputValue value)
@@ -45,12 +57,14 @@ public class BaDumTsss : MonoBehaviour
         if(!value.isPressed) return;
         
         _audioSource.PlayOneShot(BaClips[0]);
-        transformBa.DOScale(originalScaleBa * popAmount, popTime).OnComplete(ResetBaScale);
+        drumSpriteBa.DOColor(popColor, popTime);
+        transformBa.DOScale(originalScaleBa * popAmount, popTime).OnComplete(ResetBa);
     }
 
-    private void ResetBaScale()
+    private void ResetBa()
     {
         transformBa.DOScale(originalScaleBa, popTime);
+        drumSpriteBa.DOColor(originalColorBa, popTime);
     }
 
     public void OnDum(InputValue value)
@@ -58,11 +72,13 @@ public class BaDumTsss : MonoBehaviour
         if(!value.isPressed) return;
             
         _audioSource.PlayOneShot(DumClips[0]);
-        transformDum.DOScale(originalScaleDum * popAmount, popTime).OnComplete(ResetDumScale);
+        drumSpriteDum.DOColor(popColor, popTime);
+        transformDum.DOScale(originalScaleDum * popAmount, popTime).OnComplete(ResetDum);
     }
     
-    private void ResetDumScale()
+    private void ResetDum()
     {
+        drumSpriteDum.DOColor(originalColorDum, popTime);
         transformDum.DOScale(originalScaleDum, popTime);
     }
     
@@ -71,11 +87,13 @@ public class BaDumTsss : MonoBehaviour
         if(!value.isPressed) return;
         
         _audioSource.PlayOneShot(TssClips[0]);
-        transformTss.DOScale(originalScaleTss * popAmount, popTime).OnComplete(ResetTssScale);
+        drumSpriteTss.DOColor(popColor, popTime);
+        transformTss.DOScale(originalScaleTss * popAmount, popTime).OnComplete(ResetTss);
     }
     
-    private void ResetTssScale()
+    private void ResetTss()
     {
+        drumSpriteTss.DOColor(originalColorTss, popTime);
         transformTss.DOScale(originalScaleTss, popTime);
     }
     
