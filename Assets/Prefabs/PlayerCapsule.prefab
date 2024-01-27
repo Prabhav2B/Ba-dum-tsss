@@ -78,6 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1ccd3a1ac78ed4291a16fd5e25f69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popAmount: 1.5
+  popTime: 0.1
+  popColor: {r: 1, g: 1, b: 1, a: 1}
   drumSpriteBa: {fileID: 4484339583656608290}
   drumSpriteDum: {fileID: 8864968420058510096}
   drumSpriteTss: {fileID: 4503603418474267497}
@@ -99,9 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 4
-  SprintSpeed: 6
-  RotationSpeed: 1
+  MoveSpeed: 5
+  SprintSpeed: 10
+  RotationSpeed: 3
   SpeedChangeRate: 10
   JumpHeight: 1.2
   Gravity: -15
@@ -114,8 +117,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   CinemachineCameraTarget: {fileID: 6134780529211113871}
-  TopClamp: 89
-  BottomClamp: -89
+  TopClamp: 20
+  BottomClamp: -30
 --- !u!114 &9142835218209122341
 MonoBehaviour:
   m_ObjectHideFlags: 0
