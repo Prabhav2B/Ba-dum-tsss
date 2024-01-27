@@ -36,4 +36,17 @@ public class BillboardSprite : MonoBehaviour
         transform.LookAt(focusPoint);
         transform.rotation = Quaternion.Euler(0f, transform.localEulerAngles.y + 90f, 0f);
     }
+
+    public void JokeFizzle()
+    {
+        IsFocusingOnAct = false;
+        StartCoroutine(WaitAndStare());
+        
+    }
+    
+    IEnumerator WaitAndStare()
+    {
+        yield return new WaitForSeconds(5f);
+        IsFocusingOnAct = true;
+    }
 }
