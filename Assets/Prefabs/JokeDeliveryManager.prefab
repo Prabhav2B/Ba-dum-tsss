@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6513315607316043839}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44,3 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed28b8a846460c4886b66b431669995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jokesAndPunchLines:
+  - joke: {fileID: 8300000, guid: bc46921592c258f45a00e08a141bddca, type: 3}
+    punchlineTimeStampInSeconds: 13
+  - joke: {fileID: 8300000, guid: 0b5a81639f3f9924185021270b181f0d, type: 3}
+    punchlineTimeStampInSeconds: 9
+  - joke: {fileID: 8300000, guid: 010fbc3fb4ccb3e4ea6e78dc0ea206c8, type: 3}
+    punchlineTimeStampInSeconds: 14
+  - joke: {fileID: 8300000, guid: 2367002e79efd7a47a97a6efdadf1aa9, type: 3}
+    punchlineTimeStampInSeconds: 7
+  - joke: {fileID: 8300000, guid: a9612d17081f58d40b4091ab52755702, type: 3}
+    punchlineTimeStampInSeconds: 82
+  - joke: {fileID: 8300000, guid: b6cae66e3909da24bbe74bfd7b996592, type: 3}
+    punchlineTimeStampInSeconds: 8
+  - joke: {fileID: 8300000, guid: 34d414eb39012fe40b9b4733e9d6b3b3, type: 3}
+    punchlineTimeStampInSeconds: 8
+  cricketChirp: {fileID: 0}
