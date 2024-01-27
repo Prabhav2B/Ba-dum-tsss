@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class BaDumTsss : MonoBehaviour
 {
-
+    
     [SerializeField] private float popAmount = 1.5f;
     [SerializeField] private float popTime = 0.1f;
     [SerializeField] private Color popColor = Color.white;
@@ -22,79 +22,93 @@ public class BaDumTsss : MonoBehaviour
 
     private AudioSource _audioSource;
     
-    private Transform transformBa;
-    private Transform transformDum;
-    private Transform transformTss;
+    private Transform _transformBa;
+    private Transform _transformDum;
+    private Transform _transformTss;
     
-    private Vector3 originalScaleBa;
-    private Vector3 originalScaleDum;
-    private Vector3 originalScaleTss;
+    private Vector3 _originalScaleBa;
+    private Vector3 _originalScaleDum;
+    private Vector3 _originalScaleTss;
     
-    private Color originalColorBa;
-    private Color originalColorDum;
-    private Color originalColorTss;
+    private Color _originalColorBa;
+    private Color _originalColorDum;
+    private Color _originalColorTss;
+
+    private JokeDeliveryManager _jokeDeliveryManager;
+
+    private bool _ba = false;
+    private bool _dum = false;
 
     private void Start()
     {
         _audioSource = GetComponentInChildren<AudioSource>();
+        _jokeDeliveryManager = FindObjectOfType<JokeDeliveryManager>();
         
-        transformBa = drumSpriteBa.transform;
-        transformDum = drumSpriteDum.transform;
-        transformTss = drumSpriteTss.transform;
+        _transformBa = drumSpriteBa.transform;
+        _transformDum = drumSpriteDum.transform;
+        _transformTss = drumSpriteTss.transform;
 
-        originalScaleBa = transformBa.localScale;
-        originalScaleDum = transformDum.localScale;
-        originalScaleTss = transformTss.localScale;
+        _originalScaleBa = _transformBa.localScale;
+        _originalScaleDum = _transformDum.localScale;
+        _originalScaleTss = _transformTss.localScale;
 
-        originalColorBa = drumSpriteBa.color;
-        originalColorDum = drumSpriteDum.color;
-        originalColorTss = drumSpriteTss.color;
+        _originalColorBa = drumSpriteBa.color;
+        _originalColorDum = drumSpriteDum.color;
+        _originalColorTss = drumSpriteTss.color;
         
     }
 
     public void OnBa(InputValue value)
     {
         if(!value.isPressed) return;
+
+        _ba = true;
+        _dum = false;
         
         _audioSource.PlayOneShot(BaClips[0]);
         drumSpriteBa.DOColor(popColor, popTime);
-        transformBa.DOScale(originalScaleBa * popAmount, popTime).OnComplete(ResetBa);
+        _transformBa.DOScale(_originalScaleBa * popAmount, popTime).OnComplete(ResetBa);
     }
 
     private void ResetBa()
     {
-        transformBa.DOScale(originalScaleBa, popTime);
-        drumSpriteBa.DOColor(originalColorBa, popTime);
+        _transformBa.DOScale(_originalScaleBa, popTime);
+        drumSpriteBa.DOColor(_originalColorBa, popTime);
     }
 
     public void OnDum(InputValue value)
     {
         if(!value.isPressed) return;
             
+        _dum = true;
+        
         _audioSource.PlayOneShot(DumClips[0]);
         drumSpriteDum.DOColor(popColor, popTime);
-        transformDum.DOScale(originalScaleDum * popAmount, popTime).OnComplete(ResetDum);
+        _transformDum.DOScale(_originalScaleDum * popAmount, popTime).OnComplete(ResetDum);
     }
     
     private void ResetDum()
     {
-        drumSpriteDum.DOColor(originalColorDum, popTime);
-        transformDum.DOScale(originalScaleDum, popTime);
+        drumSpriteDum.DOColor(_originalColorDum, popTime);
+        _transformDum.DOScale(_originalScaleDum, popTime);
     }
     
     public void OnTsss(InputValue value)
     {
         if(!value.isPressed) return;
+
+        if (_ba && _dum)
+            _jokeDeliveryManager.Tss(); //MAKE THIS INTO AN EVENT
         
         _audioSource.PlayOneShot(TssClips[0]);
         drumSpriteTss.DOColor(popColor, popTime);
-        transformTss.DOScale(originalScaleTss * popAmount, popTime).OnComplete(ResetTss);
+        _transformTss.DOScale(_originalScaleTss * popAmount, popTime).OnComplete(ResetTss);
     }
     
     private void ResetTss()
     {
-        drumSpriteTss.DOColor(originalColorTss, popTime);
-        transformTss.DOScale(originalScaleTss, popTime);
+        drumSpriteTss.DOColor(_originalColorTss, popTime);
+        _transformTss.DOScale(_originalScaleTss, popTime);
     }
     
 }
