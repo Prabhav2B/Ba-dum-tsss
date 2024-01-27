@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class ComedianCircle : MonoBehaviour
 {
 
     [SerializeField] public LayerMask layerMask;
+    [SerializeField] public float minWaitTime = 1.0f;
+    [SerializeField] public float maxWaitTime = 20.0f;
     
     private List<AudienceMember> audienceMembers;
     private Comedian _comedian;
@@ -38,6 +41,8 @@ public class ComedianCircle : MonoBehaviour
         audienceCentrePosition /= 4.0f;
         var comBillboard = _comedian.GetComponentInChildren<BillboardSprite>();
         comBillboard.SetFocusAngle(audienceCentrePosition);
+
+        StartCoroutine(WaitForRandomTime());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,5 +62,31 @@ public class ComedianCircle : MonoBehaviour
     public void PlayChirping(AudioClip chirpSound)
     {
         _comedyCircleAudioSource.PlayOneShot(chirpSound);
+    }
+
+    public void PlayJoke(AudioClip joke)
+    {
+        _comedian.PlayComedianJoke(joke);
+    }
+
+    IEnumerator WaitForRandomTime()
+    {
+        yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
+
+        if (!_jokeDeliveryManager.TryGetJoke(this))
+        {
+            StartCoroutine(WaitForRandomTime());
+        }
+    }
+
+    public void FinishedJoke()
+    {
+        _jokeDeliveryManager.JokeFinishedPlaying();
+        StartCoroutine(WaitForRandomTime());
+    }
+
+    public float GetJokeTime()
+    {
+        return _comedian.GetJokeTime();
     }
 }

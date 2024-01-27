@@ -51,6 +51,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  minWaitTime: 4
+  maxWaitTime: 10
 --- !u!135 &2522822220471268906
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -83,7 +85,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -211,7 +213,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
