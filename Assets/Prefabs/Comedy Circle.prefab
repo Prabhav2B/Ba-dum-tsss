@@ -54,6 +54,14 @@ MonoBehaviour:
   minWaitTime: 4
   maxWaitTime: 10
   chirpSound: {fileID: 8300000, guid: 30a99170df006ec48a9c0d7a5e346ef8, type: 3}
+  crowdFailureLines:
+  - {fileID: 8300000, guid: 7dd33a511cdd1f541a9ac2e4f1b76534, type: 3}
+  - {fileID: 8300000, guid: eccbba6af325a0c4f9731058dd8fccc6, type: 3}
+  - {fileID: 8300000, guid: 5e8654329ba4a0a4ba97b7f9849fe4b5, type: 3}
+  - {fileID: 8300000, guid: 5cf05885f559b274aa5848f0b01a0810, type: 3}
+  - {fileID: 8300000, guid: 0cf927e10ddc410409ed8d998a10a0ff, type: 3}
+  - {fileID: 8300000, guid: 372f8a104d09b81448c3fa07e15a0abf, type: 3}
+  - {fileID: 8300000, guid: 333fec1b722810b4a9d14089c41225a1, type: 3}
   comedianLocation: 0
 --- !u!135 &2522822220471268906
 SphereCollider:

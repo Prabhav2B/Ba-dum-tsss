@@ -14,7 +14,9 @@ public class ComedianCircle : MonoBehaviour
     [SerializeField] private float maxWaitTime = 20.0f;
 
     [SerializeField] private AudioClip chirpSound;
-
+    
+    [Space(10)]
+    [SerializeField] private List<AudioClip> crowdFailureLines;
     [SerializeField] private ComedianLocation comedianLocation;
     
     public JokeAndPunchline CurrentJoke { get; set; }
@@ -77,6 +79,7 @@ public class ComedianCircle : MonoBehaviour
     private void NPCDeathGlare(AudioClip handlersuccessaudio)
     {
         PlayChirping();
+        PlayAwkwardAudience(crowdFailureLines[Random.Range(0, crowdFailureLines.Count)]);
         _comedian.JokeFizzleInterrupted();
         var billboards = GetComponentsInChildren<BillboardSprite>();
         foreach (var billboard in billboards)
@@ -95,6 +98,12 @@ public class ComedianCircle : MonoBehaviour
     {
         _comedyCircleAudioSource.PlayOneShot(chirpSound);
     }
+    
+    public void PlayAwkwardAudience(AudioClip awkwardAudience)
+    {
+        _comedyCircleAudioSource.PlayOneShot(awkwardAudience);
+    }
+
 
     public void PlayJoke()
     {
