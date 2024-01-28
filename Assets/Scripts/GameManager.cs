@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     enum GameStates { Playing, Paused}
     enum GoalStates { Win, Lose}
+    
     [SerializeField]GameStates currentState;
     [SerializeField] GameObject pauseUi;
     // Start is called before the first frame update
@@ -30,7 +31,6 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
-
     }
     public void MainMenu()
     {

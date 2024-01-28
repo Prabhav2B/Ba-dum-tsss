@@ -91,15 +91,33 @@ public class Comedian : MonoBehaviour
     private IEnumerator AwkwardSilence()
     {
         Awkward();
+        foreach (var audience in _myComedianCircle.AudienceMembers)
+        {
+            audience.Awkward();
+        }
         yield return new WaitForSeconds(awkwardSilenceTime);
         _comedianAudioSource.Stop();
+        
+        Idle();
+        foreach (var audience in _myComedianCircle.AudienceMembers)
+        {
+            audience.Idle();
+        }
     }
     
     private IEnumerator WaitTillDie()
     {
         Laugh();
+        foreach (var audience in _myComedianCircle.AudienceMembers)
+        {
+            audience.Laugh();
+        }
         yield return new WaitForSeconds(laughTime);
         Dead();
+        foreach (var audience in _myComedianCircle.AudienceMembers)
+        {
+            audience.Dead();
+        }
         _isPlayingJoke = false;
         _comedianAudioSource.Stop();
         _comedianAudioSource.clip = null;
