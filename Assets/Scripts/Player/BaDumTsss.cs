@@ -124,6 +124,7 @@ public class BaDumTsss : MonoBehaviour
         _audioSource.PlayOneShot(BaClips[0]);
         drumSpriteBa.DOColor(popColor, popTime);
         _transformBa.DOScale(_originalScaleBa * popAmount, popTime).OnComplete(ResetBa);
+        ba.Play("Play");
     }
 
     private void ResetBa()
@@ -141,6 +142,7 @@ public class BaDumTsss : MonoBehaviour
         _audioSource.PlayOneShot(DumClips[0]);
         drumSpriteBa.DOColor(popColor, popTime);
         _transformBa.DOScale(_originalScaleBa * popAmount, popTime).OnComplete(ResetBa);
+        dum.Play("Play");
     }
     
     private void ResetDum()
@@ -159,6 +161,7 @@ public class BaDumTsss : MonoBehaviour
         _audioSource.PlayOneShot(TssClips[0]);
         drumSpriteTss.DOColor(popColor, popTime);
         _transformTss.DOScale(_originalScaleTss * popAmount, popTime).OnComplete(ResetTss);
+        tss.Play("Play");
     }
     
     private void ResetTss()
