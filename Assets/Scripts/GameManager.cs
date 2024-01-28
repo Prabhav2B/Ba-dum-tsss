@@ -51,15 +51,19 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    [ContextMenu("Win")]    
     public void Win()
     {
         _player.PlayWinDialogue(winAudio);
         winScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 
+    [ContextMenu("Lose")]
     public void Lose()
     {
         _player.PlayLoseDialogue(loseAudio);
         loseScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
