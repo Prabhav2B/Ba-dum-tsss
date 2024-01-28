@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Comedian : MonoBehaviour
 {
+    [SerializeField] private float awkwardSilenceTime = 5f;
+    
     private AudioSource _comedianAudioSource;
     private bool _isPlayingJoke = false;
 
@@ -32,8 +34,20 @@ public class Comedian : MonoBehaviour
         _isPlayingJoke = true;
     }
 
+    public void JokeFizzleInterrupted()
+    {
+        _comedianAudioSource.Pause();
+        StartCoroutine(AwkwardSilence());
+    }
+
     public float GetJokeTime()
     {
         return _comedianAudioSource.time;
+    }
+
+    private IEnumerator AwkwardSilence()
+    {
+        yield return new WaitForSeconds(awkwardSilenceTime);
+        _comedianAudioSource.Stop();
     }
 }

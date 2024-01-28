@@ -828,11 +828,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: JokeDeliveryManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6590303897479862347, guid: 5b03b38a4b8e979458f1321df5711f2b,
-        type: 3}
-      propertyPath: cricketChirp
-      value: 
-      objectReference: {fileID: 8300000, guid: 30a99170df006ec48a9c0d7a5e346ef8, type: 3}
     - target: {fileID: 8465586123828313089, guid: 5b03b38a4b8e979458f1321df5711f2b,
         type: 3}
       propertyPath: m_LocalPosition.x

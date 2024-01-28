@@ -1,16 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class ComedianCircle : MonoBehaviour
 {
 
-    [SerializeField] public LayerMask layerMask;
-    [SerializeField] public float minWaitTime = 1.0f;
-    [SerializeField] public float maxWaitTime = 20.0f;
+    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private float minWaitTime = 1.0f;
+    [SerializeField] private float maxWaitTime = 20.0f;
+
+    [SerializeField] private AudioClip chirpSound;
+
+    [SerializeField] private ComedianLocation comedianLocation;
     
-    private List<AudienceMember> audienceMembers;
+    public JokeAndPunchline CurrentJoke { get; set; }
+    public ComedianLocation ComedianCircleLocation => comedianLocation;
+
+    private List<AudienceMember> _audienceMembers;
     private Comedian _comedian;
 
     private Vector3 _comedianFocus;
@@ -26,12 +36,12 @@ public class ComedianCircle : MonoBehaviour
         _jokeDeliveryManager = FindObjectOfType<JokeDeliveryManager>();
         _comedyCircleAudioSource = GetComponent<AudioSource>();
         
-        audienceMembers = GetComponentsInChildren<AudienceMember>().ToList();
+        _audienceMembers = GetComponentsInChildren<AudienceMember>().ToList();
         _comedian = GetComponentInChildren<Comedian>();
 
         var audienceCentrePosition = Vector3.zero;
         
-        foreach (var member in audienceMembers)
+        foreach (var member in _audienceMembers)
         {
             var memBillboard = member.GetComponentInChildren<BillboardSprite>();
             memBillboard.SetFocusAngle(_comedian.transform.position);
@@ -45,21 +55,43 @@ public class ComedianCircle : MonoBehaviour
         StartCoroutine(WaitForRandomTime());
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnDisable()
     {
-        if ((layerMask.value & (1 << other.transform.gameObject.layer)) <= 0) return;
-        _jokeDeliveryManager.PlayerInComedyCircle = true;
-        _jokeDeliveryManager.CurrentComedyCircle = this;
+        _jokeDeliveryManager.OnJokeHit -= KillAllNPCS;
+        _jokeDeliveryManager.OnFizzle -= NPCDeathGlare;
     }
     
-    private void OnTriggerExit(Collider other)
+
+    public void PlayerInComedyCircle()
     {
-        if ((layerMask.value & (1 << other.transform.gameObject.layer)) <= 0) return;
-        _jokeDeliveryManager.PlayerInComedyCircle = false;
-        _jokeDeliveryManager.CurrentComedyCircle = null;
+        _jokeDeliveryManager.OnJokeHit += KillAllNPCS;
+        _jokeDeliveryManager.OnFizzle += NPCDeathGlare;
     }
     
-    public void PlayChirping(AudioClip chirpSound)
+    public void PlayerLeftComedyCircle()
+    {
+        _jokeDeliveryManager.OnJokeHit -= KillAllNPCS;
+        _jokeDeliveryManager.OnFizzle -= NPCDeathGlare;
+    }
+
+    private void NPCDeathGlare(AudioClip handlersuccessaudio)
+    {
+        PlayChirping();
+        _comedian.JokeFizzleInterrupted();
+        var billboards = GetComponentsInChildren<BillboardSprite>();
+        foreach (var billboard in billboards)
+        {
+            billboard.JokeFizzle();
+        }
+    }
+    
+    private void KillAllNPCS(AudioClip handlerfailaudio)
+    {
+        throw new System.NotImplementedException();
+    }
+    
+
+    public void PlayChirping()
     {
         _comedyCircleAudioSource.PlayOneShot(chirpSound);
     }
@@ -78,6 +110,11 @@ public class ComedianCircle : MonoBehaviour
             StartCoroutine(WaitForRandomTime());
         }
     }
+    
+    public void QueueJoke()
+    {
+       
+    }
 
     public void FinishedJoke()
     {
@@ -89,14 +126,36 @@ public class ComedianCircle : MonoBehaviour
     {
         return _comedian.GetJokeTime();
     }
-
-    public void FizzleJoke(AudioClip chirp)
+    
+    
+    private void OnTriggerEnter(Collider other)
     {
-        PlayChirping(chirp);
-        var billboards = GetComponentsInChildren<BillboardSprite>();
-        foreach (var billboard in billboards)
-        {
-            billboard.JokeFizzle();
-        }
+        if ((layerMask.value & (1 << other.transform.gameObject.layer)) <= 0) return;
+        _jokeDeliveryManager.PlayerInComedyCircle = true;
+        _jokeDeliveryManager.CurrentComedyCircle = this;
+        PlayerInComedyCircle();
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if ((layerMask.value & (1 << other.transform.gameObject.layer)) <= 0) return;
+        _jokeDeliveryManager.PlayerInComedyCircle = false;
+        _jokeDeliveryManager.CurrentComedyCircle = null;
+        PlayerLeftComedyCircle();
+    }
+
+    public enum ComedianLocation
+    {
+        WaterCooler = 0,
+        MonetPainting = 1,
+        WomenRestroom = 2,
+        Tables = 3,
+        BarCounter = 4,
+        Stage = 5,
+        Kitchen = 6,
+        SmallChandelier = 7, 
+        BiiigChandelier = 8,
+        BackOfTheRoom = 9,
+        Pillar = 10
     }
 }

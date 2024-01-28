@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
@@ -39,7 +40,9 @@ public class BaDumTsss : MonoBehaviour
     private bool _ba = false;
     private bool _dum = false;
 
-    private void Start()
+    private Queue<AudioClip> _audioQueue;
+
+    private void Awake()
     {
         _audioSource = GetComponentInChildren<AudioSource>();
         _jokeDeliveryManager = FindObjectOfType<JokeDeliveryManager>();
@@ -55,9 +58,51 @@ public class BaDumTsss : MonoBehaviour
         _originalColorBa = drumSpriteBa.color;
         _originalColorDum = drumSpriteDum.color;
         _originalColorTss = drumSpriteTss.color;
-        
+
+        _audioQueue = new Queue<AudioClip>();
+
     }
 
+    private void OnEnable()
+    {
+        _jokeDeliveryManager.OnJokeQueue += PlayHandlerJokeQueueLine;
+        _jokeDeliveryManager.OnJokeHit += PlayHandlerSuccessLine;
+        _jokeDeliveryManager.OnFizzle += PlayHandlerFailureLine;
+    }
+    
+    private void OnDisable()
+    {
+        _jokeDeliveryManager.OnJokeQueue -= PlayHandlerJokeQueueLine;
+        _jokeDeliveryManager.OnJokeHit -= PlayHandlerSuccessLine;
+        _jokeDeliveryManager.OnFizzle -= PlayHandlerFailureLine;
+    }
+
+    private void PlayHandlerJokeQueueLine(AudioClip handlerJokeQueueLine)
+    {
+        _audioQueue.Enqueue(handlerJokeQueueLine);
+    }
+    
+    private void PlayHandlerSuccessLine(AudioClip handlerJokeHit)
+    {
+        _audioQueue.Enqueue(handlerJokeHit);
+    }
+    
+    private void PlayHandlerFailureLine(AudioClip handlerJokeFail)
+    {
+        _audioQueue.Enqueue(handlerJokeFail);
+    }
+
+    private void Update()
+    {
+        if(_audioQueue.Count == 0 || _audioSource.isPlaying) return;
+
+        _audioSource.clip = _audioQueue.Dequeue();
+        _audioSource.Play();
+    }
+
+
+    #region BaDumTss
+    
     public void OnBa(InputValue value)
     {
         if(!value.isPressed) return;
@@ -110,5 +155,7 @@ public class BaDumTsss : MonoBehaviour
         drumSpriteTss.DOColor(_originalColorTss, popTime);
         _transformTss.DOScale(_originalScaleTss, popTime);
     }
+    
+    #endregion
     
 }

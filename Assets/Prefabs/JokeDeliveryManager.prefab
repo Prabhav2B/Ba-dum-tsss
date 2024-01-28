@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed28b8a846460c4886b66b431669995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jokeHitTolerance: 1
+  cricketChirp: {fileID: 8300000, guid: 30a99170df006ec48a9c0d7a5e346ef8, type: 3}
   jokesAndPunchLines:
   - joke: {fileID: 8300000, guid: bc46921592c258f45a00e08a141bddca, type: 3}
     punchlineTimeStampInSeconds: 13
@@ -67,5 +69,51 @@ MonoBehaviour:
     punchlineTimeStampInSeconds: 22
   - joke: {fileID: 8300000, guid: a9612d17081f58d40b4091ab52755702, type: 3}
     punchlineTimeStampInSeconds: 82
-  cricketChirp: {fileID: 0}
-  jokeHitTolerance: 1
+  handlerLocationLines:
+  - key: 0
+    audioClips:
+    - {fileID: 8300000, guid: 24fd7c81ad1bbd149b400aa1d4b1f5a8, type: 3}
+  - key: 1
+    audioClips:
+    - {fileID: 8300000, guid: f5666ce240a65d64b864bfb3d7145222, type: 3}
+  - key: 2
+    audioClips:
+    - {fileID: 8300000, guid: 8365d383b10582f4699293ce52da08a7, type: 3}
+  - key: 3
+    audioClips:
+    - {fileID: 8300000, guid: ea8a5910ff9a8ad47b734add4380ef1c, type: 3}
+  - key: 4
+    audioClips:
+    - {fileID: 8300000, guid: 9ce668c5344a960478bce4a63cf74315, type: 3}
+    - {fileID: 8300000, guid: e51964e8d7df43a4dacf05faa76390d9, type: 3}
+  - key: 5
+    audioClips:
+    - {fileID: 8300000, guid: 9bc3348e9bd06a3448d38d50b839e866, type: 3}
+  - key: 6
+    audioClips:
+    - {fileID: 8300000, guid: a2a98d71d0541c9448987e11ea8a20e3, type: 3}
+  - key: 7
+    audioClips:
+    - {fileID: 8300000, guid: 3a31adfc320875f40a898246e245a898, type: 3}
+  - key: 8
+    audioClips:
+    - {fileID: 8300000, guid: 74f2ecd434b977c448c5d4d8974b738e, type: 3}
+  - key: 9
+    audioClips:
+    - {fileID: 8300000, guid: ebb15f34708a2e94391f3324c77d5ad9, type: 3}
+  - key: 10
+    audioClips:
+    - {fileID: 8300000, guid: 99978e21a1e72684da80cc776a59e1fe, type: 3}
+  handlerSuccessLines:
+  - {fileID: 8300000, guid: fbc063ee35a7b6949afec4c4c45aa26b, type: 3}
+  - {fileID: 8300000, guid: a5b775cec3ad45c40bb8156d422c14c0, type: 3}
+  - {fileID: 8300000, guid: 041fc80e003d3ab4c89aa1e8d451a005, type: 3}
+  - {fileID: 8300000, guid: 6f37e8476a53a20439bbbc3b04896786, type: 3}
+  - {fileID: 8300000, guid: b6d9d515e7d925c4993e35b373bd4902, type: 3}
+  - {fileID: 8300000, guid: f4e6a9df91c40a145935d41b45f65cd7, type: 3}
+  - {fileID: 8300000, guid: 4c2e0ae2e87ad2e4ab36d040ddbb493b, type: 3}
+  handlerFailureLines:
+  - {fileID: 8300000, guid: 001ce21f34c15444aa87b4fcb87a7995, type: 3}
+  - {fileID: 8300000, guid: cb26845984dfdc84b80b5796341d1f4b, type: 3}
+  - {fileID: 8300000, guid: c83c519046d53104c985e9b2c859a261, type: 3}
+  - {fileID: 8300000, guid: 73122a97c04ac85428061e46e355832f, type: 3}
