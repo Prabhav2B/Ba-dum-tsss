@@ -37,6 +37,8 @@ public class ComedianCircle : MonoBehaviour
 
     private JokeDeliveryManager _jokeDeliveryManager;
     private AudioSource _comedyCircleAudioSource;
+
+    private bool _jokeWaiting;
     
     
     // Start is called before the first frame update
@@ -128,19 +130,21 @@ public class ComedianCircle : MonoBehaviour
 
         if (!_jokeDeliveryManager.TryGetJoke(this))
         {
+            _jokeWaiting = false;
             StartCoroutine(WaitForRandomTime());
         }
     }
     
     public void QueueJoke()
     {
+        if(_jokeWaiting) return;
+        _jokeWaiting = true;
         StartCoroutine(JokeWaitingInQueue());
     }
     
     IEnumerator JokeWaitingInQueue()
     {
         yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
-
         PlayJoke();
     }
 
@@ -194,7 +198,8 @@ public class ComedianCircle : MonoBehaviour
         SmallChandelier = 7, 
         BiiigChandelier = 8,
         BackOfTheRoom = 9,
-        Pillar = 10
+        Pillar = 10,
+        Tutorial = 99
     }
 
     public void Dissolve()

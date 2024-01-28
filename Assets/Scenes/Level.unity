@@ -859,6 +859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: maxWaitTime
       value: 20
       objectReference: {fileID: 0}
@@ -1528,6 +1533,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: maxWaitTime
       value: 20
       objectReference: {fileID: 0}
@@ -2035,17 +2045,17 @@ PrefabInstance:
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.56
+      value: 35.43
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.91
+      value: -9.4
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.97
+      value: -12.86
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
@@ -3050,6 +3060,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -5135,6 +5150,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: maxWaitTime
       value: 20
       objectReference: {fileID: 0}
@@ -7003,12 +7023,22 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1635761836}
+    m_TransformParent: {fileID: 1601352042}
     m_Modifications:
     - target: {fileID: 1082885449048409535, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -7482,6 +7512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -9639,17 +9674,17 @@ PrefabInstance:
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.48
+      value: 31.17
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.28
+      value: -15.05
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.11
+      value: -17.59
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
@@ -9820,6 +9855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -10656,6 +10696,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: maxWaitTime
       value: 20
       objectReference: {fileID: 0}
@@ -10847,6 +10892,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -11342,6 +11392,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -13038,6 +13093,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: maxWaitTime
       value: 20
       objectReference: {fileID: 0}
@@ -13895,6 +13955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -14930,6 +14995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: maxWaitTime
       value: 20
       objectReference: {fileID: 0}
@@ -15529,6 +15599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -17932,6 +18007,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: maxWaitTime
       value: 20
       objectReference: {fileID: 0}
@@ -19922,6 +20002,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593569343}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1601352041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601352042}
+  m_Layer: 0
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1601352042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601352041}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 529558835}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1615315760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20178,7 +20290,6 @@ Transform:
   - {fileID: 829703310}
   - {fileID: 70099411}
   - {fileID: 765022958}
-  - {fileID: 529558835}
   - {fileID: 522226294}
   - {fileID: 1532188034}
   - {fileID: 2129044238}
@@ -21705,6 +21816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -25814,6 +25930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: maxWaitTime
       value: 20
       objectReference: {fileID: 0}
@@ -26277,3 +26398,4 @@ SceneRoots:
   - {fileID: 736147007}
   - {fileID: 76625861}
   - {fileID: 1886389031}
+  - {fileID: 1601352042}
