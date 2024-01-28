@@ -83,9 +83,9 @@ public class Comedian : MonoBehaviour
 
     private IEnumerator AwkwardSilence()
     {
+        Awkward();
         yield return new WaitForSeconds(awkwardSilenceTime);
         _comedianAudioSource.Stop();
-        Awkward();
     }
     public void Idle()
     {

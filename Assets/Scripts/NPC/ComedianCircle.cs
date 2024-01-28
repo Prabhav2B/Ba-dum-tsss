@@ -20,6 +20,9 @@ public class ComedianCircle : MonoBehaviour
     [SerializeField] private List<AudioClip> EnteringJokeZoneLines;
     
     [Space(10)]
+    [SerializeField] private List<AudioClip> laughTrack;
+    
+    [Space(10)]
     [SerializeField] private ComedianLocation comedianLocation;
     
     public JokeAndPunchline CurrentJoke { get; set; }
@@ -93,6 +96,9 @@ public class ComedianCircle : MonoBehaviour
     
     private void KillAllNPCS(AudioClip handlerfailaudio)
     {
+        //they laugh
+        //they dieeee
+        
         throw new System.NotImplementedException();
     }
 

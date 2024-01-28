@@ -68,6 +68,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2d35d95e8378318468977e5e392dfac3, type: 3}
   - {fileID: 8300000, guid: 486ea885c35ca52448740086b70dcdff, type: 3}
   - {fileID: 8300000, guid: 0c1b8c33f65916547beb9c853219f7d4, type: 3}
+  laughTrack:
+  - {fileID: 8300000, guid: 21b951909908d0b499ea17c5e4c4a899, type: 3}
+  - {fileID: 8300000, guid: 2c4077fe40256f64ea9c684a8e6ec486, type: 3}
+  - {fileID: 8300000, guid: af5e038e552bd2940999f7d26d09241c, type: 3}
   comedianLocation: 0
 --- !u!135 &2522822220471268906
 SphereCollider:
