@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.6981132, g: 0.63492054, b: 0.5202919, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.012
+  m_FogDensity: 0.018
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.554717, g: 0.40056217, b: 0.19990745, a: 1}
@@ -865,22 +865,37 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 4
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.416513
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.34
+      value: -28.63
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -890,7 +905,7 @@ PrefabInstance:
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -38.11
+      value: -37.67
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -1538,17 +1553,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -1569,6 +1584,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -14.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.375987
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3534928282195254128, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -3144,17 +3169,32 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.2078485
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.19241619
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.000000009095027
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -5231,17 +5271,32 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 7
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.372642
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -7597,17 +7652,32 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.440853
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -9946,17 +10016,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -10011,17 +10081,17 @@ PrefabInstance:
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_Radius
-      value: 8.580358
+      value: 9.226246
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_Center.x
-      value: -5.0959237e-11
+      value: -4.909273e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_Center.z
-      value: 4.0803576
+      value: 4.7262526
       objectReference: {fileID: 0}
     - target: {fileID: 3534928282195254128, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -10797,17 +10867,32 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 4
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.7199545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -10996,17 +11081,32 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.4545355
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.000000009386483
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.16679667
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -11496,12 +11596,12 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -11522,6 +11622,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.916
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.388899
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 8.983354e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3534928282195254128, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -13195,17 +13310,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -13226,6 +13341,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.262456
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 5.8463334e-10
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -14060,17 +14190,27 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.649768
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3534928282195254128, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -15136,17 +15276,32 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
-      propertyPath: comedianLocation
+      propertyPath: minWaitTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.7331305
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -15743,17 +15898,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -15774,6 +15929,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -3.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.319315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.81931496
       objectReference: {fileID: 0}
     - target: {fileID: 3534928282195254128, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -18282,17 +18447,32 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
-      propertyPath: comedianLocation
+      propertyPath: minWaitTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.5417
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -19050,6 +19230,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1737653695152250147, guid: 5fb832bfdf40d344c9e3edac95fab919,
+        type: 3}
+      propertyPath: startAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: dd544ea918636db409e6873c5220d367, type: 3}
     - target: {fileID: 2306733805469148422, guid: 5fb832bfdf40d344c9e3edac95fab919,
         type: 3}
       propertyPath: m_IsActive
@@ -22094,17 +22279,32 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 7
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.5636063
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -26623,17 +26823,27 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: minWaitTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
+      propertyPath: minWaitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
       propertyPath: comedianLocation
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Radius
+      value: 4.688064
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}

@@ -7,6 +7,7 @@ using DG.Tweening;
 
 public class BaDumTsss : MonoBehaviour
 {
+    [SerializeField] private AudioClip startAudio;
     
     [SerializeField] private float popAmount = 1.5f;
     [SerializeField] private float popTime = 0.1f;
@@ -58,6 +59,7 @@ public class BaDumTsss : MonoBehaviour
         _originalColorTss = drumSpriteTss.color;
 
         _audioQueue = new Queue<AudioClip>();
+        _audioQueue.Enqueue(startAudio);
 
     }
 
