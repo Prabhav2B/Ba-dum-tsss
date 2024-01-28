@@ -79,7 +79,8 @@ public class BaDumTsss : MonoBehaviour
     
     private void PlayHandlerSuccessLine(AudioClip handlerJokeHit)
     {
-        _audioQueue.Enqueue(handlerJokeHit);
+        StartCoroutine(WaitForABitWhenKill(handlerJokeHit));
+        //_audioQueue.Enqueue(handlerJokeHit);
     }
     
     public void PlayHandlerEnteringJokeZone(AudioClip handlerJokeZone)
@@ -98,6 +99,12 @@ public class BaDumTsss : MonoBehaviour
         if(_waiting) return;
         _waiting = true;
         StartCoroutine(WaitForABit());
+    }
+
+    private IEnumerator WaitForABitWhenKill(AudioClip handlerJokeHit)
+    {
+        yield return new WaitForSeconds(4f);
+        _audioQueue.Enqueue(handlerJokeHit);
     }
 
     private IEnumerator WaitForABit()
