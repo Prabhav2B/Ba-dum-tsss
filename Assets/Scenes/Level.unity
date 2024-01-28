@@ -10682,7 +10682,7 @@ GameObject:
   - component: {fileID: 806600852}
   - component: {fileID: 806600853}
   m_Layer: 0
-  m_Name: BGScore
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10811,6 +10811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000163ce41e00bd42b203ec8a1490fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regularVolume: 0.3
+  jokeVolume: 0.1
 --- !u!1 &810956428
 GameObject:
   m_ObjectHideFlags: 0
