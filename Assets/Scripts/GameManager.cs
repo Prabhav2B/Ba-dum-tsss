@@ -10,11 +10,18 @@ public class GameManager : MonoBehaviour
     
     [SerializeField]GameStates currentState;
     [SerializeField] GameObject pauseUi;
+
+    [SerializeField] private AudioClip winAudio;
+    [SerializeField] private AudioClip loseAudio;
+
+    private BaDumTsss _player;
+    
     // Start is called before the first frame update
     void Awake()
     {
         Time.timeScale = 1f;
         currentState = GameStates.Playing;
+        _player = FindObjectOfType<BaDumTsss>();
     }
 
     // Update is called once per frame
@@ -28,6 +35,7 @@ public class GameManager : MonoBehaviour
         }        
     }
     
+    
     public void Restart()
     {
         SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
@@ -39,5 +47,15 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void Win()
+    {
+        _player.PlayWinDialogue(winAudio);
+    }
+
+    public void Lose()
+    {
+        _player.PlayLoseDialogue(loseAudio);
     }
 }

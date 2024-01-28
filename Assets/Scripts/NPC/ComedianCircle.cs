@@ -162,7 +162,7 @@ public class ComedianCircle : MonoBehaviour
         _jokeDeliveryManager.PlayerInComedyCircle = true;
         _jokeDeliveryManager.CurrentComedyCircle = this;
 
-
+        _jokeDeliveryManager.PreventHitSpam = false;
 
         if (_jokeDeliveryManager.ComedyCirclePlayingJoke == this)
         {
