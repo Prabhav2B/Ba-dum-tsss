@@ -27,6 +27,7 @@ public class ComedianCircle : MonoBehaviour
     
     public JokeAndPunchline CurrentJoke { get; set; }
     public ComedianLocation ComedianCircleLocation => comedianLocation;
+    public List<AudienceMember> AudienceMembers => _audienceMembers;
 
     private List<AudienceMember> _audienceMembers;
     private Comedian _comedian;
