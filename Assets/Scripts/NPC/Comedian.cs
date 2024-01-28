@@ -69,6 +69,7 @@ public class Comedian : MonoBehaviour
         _comedianAudioSource.Play();
         _isPlayingJoke = true;
         Joking();
+        AudioManager.Instance.JokeOngoing();
     }
 
     public void JokeFizzleInterrupted()
@@ -103,6 +104,7 @@ public class Comedian : MonoBehaviour
         {
             audience.Idle();
         }
+        AudioManager.Instance.JokeOff();
     }
     
     private IEnumerator WaitTillDie()
@@ -126,6 +128,7 @@ public class Comedian : MonoBehaviour
         _isPlayingJoke = false;
         _comedianAudioSource.clip = null;
         _myComedianCircle.Dissolve();
+        AudioManager.Instance.JokeOff();
     }
     public void Idle()
     {
