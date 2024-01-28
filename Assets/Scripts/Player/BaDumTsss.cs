@@ -24,15 +24,12 @@ public class BaDumTsss : MonoBehaviour
     private AudioSource _audioSource;
     
     private Transform _transformBa;
-    private Transform _transformDum;
     private Transform _transformTss;
     
     private Vector3 _originalScaleBa;
-    private Vector3 _originalScaleDum;
     private Vector3 _originalScaleTss;
     
     private Color _originalColorBa;
-    private Color _originalColorDum;
     private Color _originalColorTss;
 
     private JokeDeliveryManager _jokeDeliveryManager;
@@ -52,7 +49,6 @@ public class BaDumTsss : MonoBehaviour
         _transformTss = drumSpriteTss.transform;
 
         _originalScaleBa = _transformBa.localScale;
-        _originalScaleDum = _transformDum.localScale;
         _originalScaleTss = _transformTss.localScale;
 
         _originalColorBa = drumSpriteBa.color;
@@ -141,13 +137,13 @@ public class BaDumTsss : MonoBehaviour
         
         _audioSource.PlayOneShot(DumClips[0]);
         drumSpriteBa.DOColor(popColor, popTime);
-        _transformDum.DOScale(_originalScaleDum * popAmount, popTime).OnComplete(ResetDum);
+        _transformBa.DOScale(_originalScaleBa * popAmount, popTime).OnComplete(ResetBa);
     }
     
     private void ResetDum()
     {
-        drumSpriteBa.DOColor(_originalColorDum, popTime);
-        _transformDum.DOScale(_originalScaleDum, popTime);
+        _transformBa.DOScale(_originalScaleBa, popTime);
+        drumSpriteBa.DOColor(_originalColorBa, popTime);
     }
     
     public void OnTsss(InputValue value)
