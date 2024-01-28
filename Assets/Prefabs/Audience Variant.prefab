@@ -98,11 +98,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maleSprites:
     idle: {fileID: 21300000, guid: e5543b4f3d8066649952058c945aab9d, type: 3}
-    laugh: {fileID: 0}
+    laugh: {fileID: 21300000, guid: 06005a9ca418ee24687d18192b4b68cb, type: 3}
     awkward: {fileID: 21300000, guid: be995eedbd607ec4498fe205b8403dc2, type: 3}
     dead: {fileID: 21300000, guid: 64264798264daab43854a1e8183d6b26, type: 3}
   femaleSprites:
     idle: {fileID: 21300000, guid: 86f94f76536643d4ab11ced1a706adfb, type: 3}
-    laugh: {fileID: 0}
+    laugh: {fileID: 21300000, guid: f3c7044cd8d2bbc4fac99b914b74c2d6, type: 3}
     awkward: {fileID: 21300000, guid: f24727c99ae476441b4f6f15fe71b438, type: 3}
     dead: {fileID: 21300000, guid: b5c1038f0455fa2479aaa8e6cb9fea51, type: 3}
