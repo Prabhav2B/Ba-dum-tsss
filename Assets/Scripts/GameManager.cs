@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     enum GameStates { Playing, Paused}
-    enum GoalStates { Win, Lose}
+    enum GoalStates { None, Win, Lose}
     
     [SerializeField]GameStates currentState;
+    [SerializeField] GoalStates currentGoalState;
     [SerializeField] GameObject pauseUi;
 
     [SerializeField] private GameObject winScreen;
@@ -51,15 +52,21 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    [ContextMenu("Win")]    
     public void Win()
     {
+        currentGoalState = GoalStates.Win;
         _player.PlayWinDialogue(winAudio);
         winScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 
+    [ContextMenu("Lose")]
     public void Lose()
     {
+        currentGoalState = GoalStates.Lose;
         _player.PlayLoseDialogue(loseAudio);
         loseScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
