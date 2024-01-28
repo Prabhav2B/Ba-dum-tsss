@@ -865,17 +865,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -1553,17 +1553,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -3169,17 +3169,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -5271,17 +5271,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -7652,17 +7652,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -10017,17 +10017,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -10682,7 +10682,7 @@ GameObject:
   - component: {fileID: 806600852}
   - component: {fileID: 806600853}
   m_Layer: 0
-  m_Name: BGScore
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10811,6 +10811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000163ce41e00bd42b203ec8a1490fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regularVolume: 0.3
+  jokeVolume: 0.1
 --- !u!1 &810956428
 GameObject:
   m_ObjectHideFlags: 0
@@ -10868,17 +10870,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -11082,17 +11084,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -11597,12 +11599,12 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -13311,17 +13313,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -14324,17 +14326,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -15411,17 +15413,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -16033,17 +16035,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -18582,17 +18584,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -22549,17 +22551,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -27093,17 +27095,17 @@ PrefabInstance:
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: maxWaitTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: minWaitTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: comedianLocation
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2522822220471268906, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}

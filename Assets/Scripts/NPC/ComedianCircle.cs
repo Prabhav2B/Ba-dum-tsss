@@ -205,6 +205,7 @@ public class ComedianCircle : MonoBehaviour
     public void Dissolve()
     {
         _jokeDeliveryManager.JokeFinishedPlaying();
+        StopAllCoroutines();
         enabled = false;
     }
 }
