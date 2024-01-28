@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]GameStates currentState;
     [SerializeField] GameObject pauseUi;
 
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject loseScreen;
     [SerializeField] private AudioClip winAudio;
     [SerializeField] private AudioClip loseAudio;
 
@@ -52,10 +54,12 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         _player.PlayWinDialogue(winAudio);
+        winScreen.SetActive(true);
     }
 
     public void Lose()
     {
         _player.PlayLoseDialogue(loseAudio);
+        loseScreen.SetActive(true);
     }
 }
