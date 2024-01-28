@@ -2015,17 +2015,17 @@ PrefabInstance:
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.54
+      value: 33.56
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.24
+      value: -11.91
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.73
+      value: -14.97
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
@@ -9724,6 +9724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   pauseUi: {fileID: 76625857}
+  winAudio: {fileID: 0}
+  loseAudio: {fileID: 0}
 --- !u!4 &737464219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
@@ -9781,17 +9783,17 @@ PrefabInstance:
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.74
+      value: 32.48
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.63
+      value: -13.28
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.08
+      value: -16.11
       objectReference: {fileID: 0}
     - target: {fileID: 7808374507757283269, guid: 52ccfc55f8db37c44a27993fc641eb38,
         type: 3}
