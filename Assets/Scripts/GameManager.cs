@@ -32,13 +32,16 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseUi.SetActive(!pauseUi.activeSelf);
-            Time.timeScale= pauseUi.activeSelf? 0f : 1.0f;
-            currentState = pauseUi.activeSelf? GameStates.Paused:GameStates.Playing;
+            Resume();
         }        
     }
-    
-    
+
+    public void Resume()
+    {
+        pauseUi.SetActive(!pauseUi.activeSelf);
+        Time.timeScale = pauseUi.activeSelf ? 0f : 1.0f;
+        currentState = pauseUi.activeSelf ? GameStates.Paused : GameStates.Playing;
+    }
     public void Restart()
     {
         SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);

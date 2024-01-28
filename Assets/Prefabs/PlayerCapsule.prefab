@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1ccd3a1ac78ed4291a16fd5e25f69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startAudio: {fileID: 0}
   popAmount: 1.5
   popTime: 0.1
   popColor: {r: 1, g: 1, b: 1, a: 1}
@@ -104,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 5
-  SprintSpeed: 10
+  SprintSpeed: 12
   RotationSpeed: 3
   SpeedChangeRate: 10
   JumpHeight: 1.2
