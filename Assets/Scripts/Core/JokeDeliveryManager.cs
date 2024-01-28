@@ -63,7 +63,6 @@ public class JokeDeliveryManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Miss");
             OnFizzle?.Invoke(handlerFailureLines[Random.Range(0, handlerFailureLines.Count)]);
         }
 

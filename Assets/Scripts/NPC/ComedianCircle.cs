@@ -96,9 +96,9 @@ public class ComedianCircle : MonoBehaviour
         _comedyCircleAudioSource.PlayOneShot(chirpSound);
     }
 
-    public void PlayJoke(AudioClip joke)
+    public void PlayJoke()
     {
-        _comedian.PlayComedianJoke(joke);
+        _comedian.PlayComedianJoke(CurrentJoke.Joke);
     }
 
     IEnumerator WaitForRandomTime()
@@ -113,7 +113,14 @@ public class ComedianCircle : MonoBehaviour
     
     public void QueueJoke()
     {
-       
+        StartCoroutine(JokeWaitingInQueue());
+    }
+    
+    IEnumerator JokeWaitingInQueue()
+    {
+        yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
+
+        PlayJoke();
     }
 
     public void FinishedJoke()

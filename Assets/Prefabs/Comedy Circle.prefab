@@ -53,7 +53,7 @@ MonoBehaviour:
     m_Bits: 64
   minWaitTime: 4
   maxWaitTime: 10
-  chirpSound: {fileID: 0}
+  chirpSound: {fileID: 8300000, guid: 30a99170df006ec48a9c0d7a5e346ef8, type: 3}
   comedianLocation: 0
 --- !u!135 &2522822220471268906
 SphereCollider:

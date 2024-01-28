@@ -38,6 +38,7 @@ public class BillboardSprite : MonoBehaviour
         //transform.rotation = Quaternion.Euler(0f, transform.localEulerAngles.y + 90f, 0f);
         
         var target_rot = Quaternion.LookRotation (focusPoint - transform.position);
+        target_rot = Quaternion.Euler(0f, target_rot.eulerAngles.y + 90f, 0f);
         
         transform.DORotateQuaternion(target_rot, 0.5f);
     }
