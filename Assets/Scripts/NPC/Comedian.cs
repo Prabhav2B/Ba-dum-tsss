@@ -124,7 +124,6 @@ public class Comedian : MonoBehaviour
         //deathfx.Play();
         
         _isPlayingJoke = false;
-        _comedianAudioSource.Stop();
         _comedianAudioSource.clip = null;
         _myComedianCircle.Dissolve();
     }
