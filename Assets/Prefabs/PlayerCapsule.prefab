@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9142835218209122341}
   - component: {fileID: 5759483407491911149}
   - component: {fileID: 1215498647483075498}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: PlayerCapsule
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 5400190988614545626}
   - component: {fileID: 8265259857761354758}
   - component: {fileID: 6500786407203441619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anim_Dum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 8610941838912902874}
   - component: {fileID: 427939421511267917}
   - component: {fileID: 2528971170152760114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anim_Ba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1608926671134654174}
   - component: {fileID: 4484339583656608290}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Ba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1048206911133091516}
   - component: {fileID: 8864968420058510096}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Dum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 8399116751877990801}
   - component: {fileID: 5752080924916552777}
   - component: {fileID: 1503515965655019316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anim_Tss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8646542451108345967}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: DrumGFXRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 3443588783609136087}
   - component: {fileID: 632466963903781984}
   - component: {fileID: 3800163705682464250}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2147519223551115866}
   - component: {fileID: 4503603418474267497}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Tsss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -981,7 +981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8776608307106333726}
   - component: {fileID: 7720625840073959352}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: AudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1108,7 +1108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2930765534538848797}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerCameraRoot
   m_TagString: CinemachineTarget
   m_Icon: {fileID: 0}
@@ -1203,6 +1203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005220659476430823, guid: 2d3a85ecde41a8246a79669975912b74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

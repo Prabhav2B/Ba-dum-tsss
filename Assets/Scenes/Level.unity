@@ -361,7 +361,7 @@ Transform:
   m_GameObject: {fileID: 42598872}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.8, y: 9.929999, z: -8.1}
+  m_LocalPosition: {x: 8.8, y: 9.7, z: -8.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -403,7 +403,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.9924528, g: 0.8782066, b: 0.3876183, a: 1}
   m_Intensity: 20.53
-  m_Range: 50
+  m_Range: 15.8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -857,6 +857,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Comedy Circle (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -870,7 +875,7 @@ PrefabInstance:
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -39.35
+      value: -38.11
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -1510,6 +1515,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -3020,6 +3030,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -5087,6 +5102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -7613,6 +7633,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Comedy Circle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9938,6 +9963,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Comedy Circle (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10756,6 +10786,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Comedy Circle (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10934,6 +10969,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -13025,6 +13065,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058091156}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1064203594
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1635761836}
+    m_Modifications:
+    - target: {fileID: 2258135599614347238, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_Name
+      value: BillboardSprite (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -33.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8045511
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.59388345
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -72.866
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 288425ecf42ec2b4eb26f735b30263ad, type: 3}
+--- !u!4 &1064203595 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8196961128298023079, guid: 288425ecf42ec2b4eb26f735b30263ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064203594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1066650497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13111,6 +13225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -13956,6 +14075,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3534928282195254128, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -14974,6 +15098,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Comedy Circle (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15560,6 +15689,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1453075189017734047, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -17946,6 +18080,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Comedy Circle (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20182,7 +20321,6 @@ Transform:
   - {fileID: 1453158014}
   - {fileID: 829703310}
   - {fileID: 70099411}
-  - {fileID: 1757334962}
   - {fileID: 765022958}
   - {fileID: 529558835}
   - {fileID: 522226294}
@@ -20199,6 +20337,7 @@ Transform:
   - {fileID: 590890477}
   - {fileID: 188943870}
   - {fileID: 497477578}
+  - {fileID: 1064203595}
   - {fileID: 1615315761}
   - {fileID: 2138521175}
   - {fileID: 450377723}
@@ -21066,80 +21205,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1754971232}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1757334961
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1635761836}
-    m_Modifications:
-    - target: {fileID: 1082885449048409535, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_Name
-      value: Comedy Circle (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -32.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.92970616
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.36830226
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -403.222
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dee8988d8c42def46b8983d97e998910, type: 3}
---- !u!4 &1757334962 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
-    type: 3}
-  m_PrefabInstance: {fileID: 1757334961}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1798641538
 GameObject:
   m_ObjectHideFlags: 0
@@ -21878,6 +21943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
@@ -26168,6 +26238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Comedy Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151760716008950201, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: comedianLocation
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5545917925413493353, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}

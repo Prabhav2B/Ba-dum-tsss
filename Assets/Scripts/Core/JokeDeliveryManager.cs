@@ -1,13 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.SocialPlatforms;
+using Random = UnityEngine.Random;
 
 public class JokeDeliveryManager : MonoBehaviour
 {
+
+    [SerializeField] private int missesForLose = 4;
+    [SerializeField] private int totalTargets = 15;
     
+    [Space(10)]
     [Range(0f, 2f)]
     [SerializeField] private float jokeHitTolerance = 1f;
     [SerializeField] private AudioClip cricketChirp;
@@ -41,7 +47,19 @@ public class JokeDeliveryManager : MonoBehaviour
 
     public ComedianCircle ComedyCirclePlayingJoke { get; set; }
     
-    // Start is called before the first frame update
+    public bool PreventHitSpam { get; set; }
+
+    private GameManager _gameManager;
+    
+    private int _misses;
+    private int _targetsEliminated;
+
+
+    private void Awake()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
+    }
+
     void Start()
     {
         _comedianCircles = FindObjectsOfType<ComedianCircle>().ToList();
@@ -58,12 +76,24 @@ public class JokeDeliveryManager : MonoBehaviour
 
         if (jokeTime - punchLineTime > 0.0f && jokeTime - punchLineTime < jokeHitTolerance)
         {
-            Debug.Log("Hit");
+            if(PreventHitSpam) return;
+            
+            PreventHitSpam = true;
             OnJokeHit?.Invoke(handlerSuccessLines[Random.Range(0, handlerSuccessLines.Count)]);
+            _targetsEliminated++;
+            if (_targetsEliminated == totalTargets)
+            {
+                _gameManager.Win();
+            }
         }
         else
         {
             OnFizzle?.Invoke(handlerFailureLines[Random.Range(0, handlerFailureLines.Count)]);
+            _misses++;
+            if (_misses == missesForLose)
+            {
+                _gameManager.Lose();
+            }
         }
 
     }

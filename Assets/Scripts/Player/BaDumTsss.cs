@@ -75,6 +75,15 @@ public class BaDumTsss : MonoBehaviour
         _jokeDeliveryManager.OnFizzle -= PlayHandlerFailureLine;
     }
 
+    public void PlayWinDialogue(AudioClip winAudio)
+    {
+        _audioQueue.Enqueue(winAudio);
+    }
+
+    public void PlayLoseDialogue(AudioClip loseAudio)
+    {
+        _audioQueue.Enqueue(loseAudio);
+    }
     private void PlayHandlerJokeQueueLine(AudioClip handlerJokeQueueLine)
     {
         _audioQueue.Enqueue(handlerJokeQueueLine);
@@ -178,5 +187,6 @@ public class BaDumTsss : MonoBehaviour
     }
     
     #endregion
+
     
 }
