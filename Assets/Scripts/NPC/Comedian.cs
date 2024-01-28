@@ -118,6 +118,11 @@ public class Comedian : MonoBehaviour
         {
             audience.Dead();
         }
+
+        var deathfx = transform.parent.GetComponentInChildren<ParticleSystem>();
+        deathfx.gameObject.SetActive(true);
+        deathfx.Play();
+        
         _isPlayingJoke = false;
         _comedianAudioSource.Stop();
         _comedianAudioSource.clip = null;
