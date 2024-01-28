@@ -79,11 +79,13 @@ public class BaDumTsss : MonoBehaviour
 
     public void PlayWinDialogue(AudioClip winAudio)
     {
+        _audioQueue.Clear();
         _audioQueue.Enqueue(winAudio);
     }
 
     public void PlayLoseDialogue(AudioClip loseAudio)
     {
+        _audioQueue.Clear();
         _audioQueue.Enqueue(loseAudio);
     }
     private void PlayHandlerJokeQueueLine(AudioClip handlerJokeQueueLine)
