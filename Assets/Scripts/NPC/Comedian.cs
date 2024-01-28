@@ -119,9 +119,9 @@ public class Comedian : MonoBehaviour
             audience.Dead();
         }
 
-        var deathfx = transform.parent.GetComponentInChildren<ParticleSystem>();
+        var deathfx = transform.parent.GetComponentInChildren<ParticleSystem>(true);
         deathfx.gameObject.SetActive(true);
-        deathfx.Play();
+        //deathfx.Play();
         
         _isPlayingJoke = false;
         _comedianAudioSource.Stop();
