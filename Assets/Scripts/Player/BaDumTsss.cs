@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
@@ -39,6 +40,7 @@ public class BaDumTsss : MonoBehaviour
 
     private bool _ba = false;
     private bool _dum = false;
+    private bool _waiting = false;
 
     private Queue<AudioClip> _audioQueue;
 
@@ -87,6 +89,11 @@ public class BaDumTsss : MonoBehaviour
         _audioQueue.Enqueue(handlerJokeHit);
     }
     
+    public void PlayHandlerEnteringJokeZone(AudioClip handlerJokeZone)
+    {
+        _audioSource.PlayOneShot(handlerJokeZone);
+    }
+    
     private void PlayHandlerFailureLine(AudioClip handlerJokeFail)
     {
         _audioQueue.Enqueue(handlerJokeFail);
@@ -95,9 +102,17 @@ public class BaDumTsss : MonoBehaviour
     private void Update()
     {
         if(_audioQueue.Count == 0 || _audioSource.isPlaying) return;
+        if(_waiting) return;
+        _waiting = true;
+        StartCoroutine(WaitForABit());
+    }
 
+    private IEnumerator WaitForABit()
+    {
+        yield return new WaitForSeconds(3f);
         _audioSource.clip = _audioQueue.Dequeue();
         _audioSource.Play();
+        _waiting = false;
     }
 
 
