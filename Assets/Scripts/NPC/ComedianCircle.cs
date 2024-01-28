@@ -20,7 +20,7 @@ public class ComedianCircle : MonoBehaviour
     [SerializeField] private List<AudioClip> EnteringJokeZoneLines;
     
     [Space(10)]
-    [SerializeField] private List<AudioClip> laughTrack;
+    [SerializeField] private List<AudioClip> laughTracks;
     
     [Space(10)]
     [SerializeField] private ComedianLocation comedianLocation;
@@ -96,10 +96,8 @@ public class ComedianCircle : MonoBehaviour
     
     private void KillAllNPCS(AudioClip handlerfailaudio)
     {
-        //they laugh
-        //they dieeee
-        
-        throw new System.NotImplementedException();
+        PlayLaugh(laughTracks[Random.Range(0, laughTracks.Count)]);
+        _comedian.JokeHitInterrupted();
     }
 
 
@@ -112,7 +110,11 @@ public class ComedianCircle : MonoBehaviour
     {
         _comedyCircleAudioSource.PlayOneShot(awkwardAudience);
     }
-
+    
+    private void PlayLaugh(AudioClip laughTrack)
+    {
+        _comedyCircleAudioSource.PlayOneShot(laughTrack);
+    }
 
     private void PlayJoke()
     {
@@ -192,5 +194,11 @@ public class ComedianCircle : MonoBehaviour
         BiiigChandelier = 8,
         BackOfTheRoom = 9,
         Pillar = 10
+    }
+
+    public void Dissolve()
+    {
+        _jokeDeliveryManager.JokeFinishedPlaying();
+        enabled = false;
     }
 }

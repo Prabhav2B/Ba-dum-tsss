@@ -6,6 +6,7 @@ using UnityEngine;
 public class Comedian : MonoBehaviour
 {
     [SerializeField] private float awkwardSilenceTime = 5f;
+    [SerializeField] private float laughTime = 3f;
     
     private AudioSource _comedianAudioSource;
     private bool _isPlayingJoke = false;
@@ -75,6 +76,12 @@ public class Comedian : MonoBehaviour
         _comedianAudioSource.Pause();
         StartCoroutine(AwkwardSilence());
     }
+    
+    public void JokeHitInterrupted()
+    {
+        _comedianAudioSource.Pause();
+        StartCoroutine(WaitTillDie());
+    }
 
     public float GetJokeTime()
     {
@@ -86,6 +93,17 @@ public class Comedian : MonoBehaviour
         Awkward();
         yield return new WaitForSeconds(awkwardSilenceTime);
         _comedianAudioSource.Stop();
+    }
+    
+    private IEnumerator WaitTillDie()
+    {
+        Laugh();
+        yield return new WaitForSeconds(laughTime);
+        Dead();
+        _isPlayingJoke = false;
+        _comedianAudioSource.Stop();
+        _comedianAudioSource.clip = null;
+        _myComedianCircle.Dissolve();
     }
     public void Idle()
     {
@@ -107,4 +125,6 @@ public class Comedian : MonoBehaviour
     {
         sr.sprite = dead;
     }
+
+    
 }
