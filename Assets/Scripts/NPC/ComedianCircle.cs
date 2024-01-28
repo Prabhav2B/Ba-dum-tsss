@@ -17,6 +17,9 @@ public class ComedianCircle : MonoBehaviour
     
     [Space(10)]
     [SerializeField] private List<AudioClip> crowdFailureLines;
+    [SerializeField] private List<AudioClip> EnteringJokeZoneLines;
+    
+    [Space(10)]
     [SerializeField] private ComedianLocation comedianLocation;
     
     public JokeAndPunchline CurrentJoke { get; set; }
@@ -92,20 +95,20 @@ public class ComedianCircle : MonoBehaviour
     {
         throw new System.NotImplementedException();
     }
-    
 
-    public void PlayChirping()
+
+    private void PlayChirping()
     {
         _comedyCircleAudioSource.PlayOneShot(chirpSound);
     }
-    
-    public void PlayAwkwardAudience(AudioClip awkwardAudience)
+
+    private void PlayAwkwardAudience(AudioClip awkwardAudience)
     {
         _comedyCircleAudioSource.PlayOneShot(awkwardAudience);
     }
 
 
-    public void PlayJoke()
+    private void PlayJoke()
     {
         _comedian.PlayComedianJoke(CurrentJoke.Joke);
     }
@@ -149,6 +152,16 @@ public class ComedianCircle : MonoBehaviour
         if ((layerMask.value & (1 << other.transform.gameObject.layer)) <= 0) return;
         _jokeDeliveryManager.PlayerInComedyCircle = true;
         _jokeDeliveryManager.CurrentComedyCircle = this;
+
+
+
+        if (_jokeDeliveryManager.ComedyCirclePlayingJoke == this)
+        {
+            var player = other.gameObject.GetComponent<BaDumTsss>();
+            player.PlayHandlerEnteringJokeZone(EnteringJokeZoneLines[Random.Range(0, EnteringJokeZoneLines.Count)]);
+            QueueJoke();
+        }
+
         PlayerInComedyCircle();
     }
     

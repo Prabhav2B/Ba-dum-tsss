@@ -39,7 +39,7 @@ public class JokeDeliveryManager : MonoBehaviour
     public bool PlayerInComedyCircle { get; set; }
     public ComedianCircle CurrentComedyCircle { get; set; }
 
-    private ComedianCircle ComedyCirclePlayingJoke { get; set; }
+    public ComedianCircle ComedyCirclePlayingJoke { get; set; }
     
     // Start is called before the first frame update
     void Start()
@@ -80,7 +80,7 @@ public class JokeDeliveryManager : MonoBehaviour
         var locationLine = currentLocationLines.AudioClips[Random.Range(0, currentLocationLines.AudioClips.Count)];
         
         OnJokeQueue?.Invoke(locationLine);
-        ComedyCirclePlayingJoke.QueueJoke();
+        //QueueJoke();
         return true;
     }
 

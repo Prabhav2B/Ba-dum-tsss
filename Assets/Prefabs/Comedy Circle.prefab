@@ -62,6 +62,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0cf927e10ddc410409ed8d998a10a0ff, type: 3}
   - {fileID: 8300000, guid: 372f8a104d09b81448c3fa07e15a0abf, type: 3}
   - {fileID: 8300000, guid: 333fec1b722810b4a9d14089c41225a1, type: 3}
+  EnteringJokeZoneLines:
+  - {fileID: 8300000, guid: 3d6533598382b13498dccaf911a94622, type: 3}
+  - {fileID: 8300000, guid: fbe36c1f39af2da48ab22f4944a5c46f, type: 3}
+  - {fileID: 8300000, guid: 2d35d95e8378318468977e5e392dfac3, type: 3}
+  - {fileID: 8300000, guid: 486ea885c35ca52448740086b70dcdff, type: 3}
+  - {fileID: 8300000, guid: 0c1b8c33f65916547beb9c853219f7d4, type: 3}
   comedianLocation: 0
 --- !u!135 &2522822220471268906
 SphereCollider:
