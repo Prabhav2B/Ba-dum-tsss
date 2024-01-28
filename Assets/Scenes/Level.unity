@@ -1586,6 +1586,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6498068158131061195, guid: dee8988d8c42def46b8983d97e998910,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ae943e4a1234d042a7d2ab332ea2d1a,
+        type: 3}
     - target: {fileID: 6682740501982150797, guid: dee8988d8c42def46b8983d97e998910,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18433,21 +18439,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
-      objectReference: {fileID: 0}
-    - target: {fileID: 948427910528699523, guid: 5fb832bfdf40d344c9e3edac95fab919,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 948427910528699523, guid: 5fb832bfdf40d344c9e3edac95fab919,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 948427910528699523, guid: 5fb832bfdf40d344c9e3edac95fab919,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 948427910528699523, guid: 5fb832bfdf40d344c9e3edac95fab919,
         type: 3}

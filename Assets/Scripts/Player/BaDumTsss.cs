@@ -15,7 +15,10 @@ public class BaDumTsss : MonoBehaviour
     [Space (10)]
     [SerializeField] private SpriteRenderer drumSpriteBa;
     [SerializeField] private SpriteRenderer drumSpriteTss;
-    
+    [SerializeField] private Animator ba;
+    [SerializeField] private Animator dum;
+    [SerializeField] private Animator tss;
+
     [Space (10)]
     [SerializeField] private List<AudioClip> BaClips;
     [SerializeField] private List<AudioClip> DumClips;
