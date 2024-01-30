@@ -33,7 +33,11 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Resume();
-        }        
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
+        }
     }
 
     public void Resume()
