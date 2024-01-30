@@ -11,10 +11,12 @@ public class AudienceMember : MonoBehaviour
     Sprite awkward;
     Sprite dead;
     SpriteRenderer sr;
+    Material mat;
 
     void Awake()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
+        mat = sr.material;
         RandomizeSex();
     }
     void RandomizeSex()
@@ -42,17 +44,22 @@ public class AudienceMember : MonoBehaviour
     public void Idle()
     {
         sr.sprite = idle;
+        mat.SetTexture("_EmissionMap", idle.texture);
     }
     public void Laugh()
     {
         sr.sprite = laugh;
+        mat.SetTexture("_EmissionMap", laugh.texture);
     }
+
     public void Awkward()
     {
         sr.sprite = awkward;
+        mat.SetTexture("_EmissionMap", awkward.texture);
     }
     public void Dead()
     {
         sr.sprite = dead;
+        mat.SetTexture("_EmissionMap", dead.texture);
     }
 }
