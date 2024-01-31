@@ -52,7 +52,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  minWaitTime: 1.5
+  minWaitTime: 2
   maxWaitTime: 3
   chirpSound: {fileID: 8300000, guid: 30a99170df006ec48a9c0d7a5e346ef8, type: 3}
   crowdFailureLines:
