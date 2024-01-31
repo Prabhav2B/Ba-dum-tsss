@@ -23,6 +23,7 @@ public class Comedian : MonoBehaviour
     Sprite dead;
     SpriteRenderer sr;
     Material mat;
+    GameManager gm => GameManager.Instance;
 
     void Awake()
     {
@@ -60,6 +61,17 @@ public class Comedian : MonoBehaviour
     private void Update()
     {
         if (!_isPlayingJoke) return;
+        if (gm.IsPaused)
+        {
+            if(_comedianAudioSource.isPlaying)
+                _comedianAudioSource.Pause();
+            return;
+        }
+        else
+        {
+            if(!_comedianAudioSource.isPlaying)
+                _comedianAudioSource.UnPause();
+        }
         if (_comedianAudioSource.isPlaying) return;
         _isPlayingJoke = false;
         _myComedianCircle.FinishedJoke();

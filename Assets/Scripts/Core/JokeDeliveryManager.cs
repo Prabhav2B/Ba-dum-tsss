@@ -53,7 +53,7 @@ public class JokeDeliveryManager : MonoBehaviour
     
     private int _misses;
     private int _targetsEliminated;
-
+    GameManager gm => GameManager.Instance;
 
     private void Awake()
     {
@@ -70,6 +70,7 @@ public class JokeDeliveryManager : MonoBehaviour
         if (!PlayerInComedyCircle) return;
         if (ComedyCirclePlayingJoke == null) return;
         if (CurrentComedyCircle != ComedyCirclePlayingJoke) return;
+        if (gm.IsPaused) return;
 
         var punchLineTime = CurrentComedyCircle.CurrentJoke.PunchlineTimeStampInSeconds;
         var jokeTime = ComedyCirclePlayingJoke.GetJokeTime();

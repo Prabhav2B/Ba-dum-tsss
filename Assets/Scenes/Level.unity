@@ -1137,9 +1137,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 59144163}
-  - {fileID: 1194607616}
   - {fileID: 3185595462207963276}
   - {fileID: 1624099634784127317}
+  - {fileID: 1194607616}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9769,7 +9769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a05f7e3b08ad64e86691b0cb9e5d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  currentGameState: 0
   currentGoalState: 0
   pauseUi: {fileID: 1194607615}
   winScreen: {fileID: 4508606146841867245}
@@ -13907,7 +13907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

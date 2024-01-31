@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     enum GameStates { Playing, Paused}
     enum GoalStates { None, Win, Lose}
+
+    public bool IsPaused => currentGameState == GameStates.Paused;
+    public bool IsGameOver=>
+        currentGoalState==GoalStates.Win || 
+        currentGoalState==GoalStates.Lose;
     
-    [SerializeField]GameStates currentState;
+    [SerializeField]GameStates currentGameState;
     [SerializeField] GoalStates currentGoalState;
     [SerializeField] GameObject pauseUi;
 
@@ -22,8 +28,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Time.timeScale = 1f;
-        currentState = GameStates.Playing;
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        //Time.timeScale = 1f;
+        currentGameState = GameStates.Playing;
         _player = FindObjectOfType<BaDumTsss>();
     }
 
@@ -43,8 +55,8 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         pauseUi.SetActive(!pauseUi.activeSelf);
-        Time.timeScale = pauseUi.activeSelf ? 0f : 1.0f;
-        currentState = pauseUi.activeSelf ? GameStates.Paused : GameStates.Playing;
+        //Time.timeScale = pauseUi.activeSelf ? 0f : 1.0f;
+        currentGameState = pauseUi.activeSelf ? GameStates.Paused : GameStates.Playing;
     }
     public void Restart()
     {
@@ -65,7 +77,7 @@ public class GameManager : MonoBehaviour
         currentGoalState = GoalStates.Win;
         _player.PlayWinDialogue(winAudio);
         winScreen.SetActive(true);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     [ContextMenu("Lose")]
@@ -74,6 +86,6 @@ public class GameManager : MonoBehaviour
         currentGoalState = GoalStates.Lose;
         _player.PlayLoseDialogue(loseAudio);
         loseScreen.SetActive(true);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 }

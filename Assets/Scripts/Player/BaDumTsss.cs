@@ -43,6 +43,8 @@ public class BaDumTsss : MonoBehaviour
     private bool _waiting = false;
 
     private Queue<AudioClip> _audioQueue;
+    GameManager gm => GameManager.Instance;
+
 
     private void Awake()
     {
@@ -113,6 +115,20 @@ public class BaDumTsss : MonoBehaviour
 
     private void Update()
     {
+        if (gm.IsPaused)
+        {
+            if(_audioSource.isPlaying)
+                _audioSource.Pause();
+            return;
+        }
+        else
+        {
+            if (!_audioSource.isPlaying)
+                _audioSource.UnPause();
+
+        }
+
+
         if(_audioQueue.Count == 0 || _audioSource.isPlaying) return;
         if(_waiting) return;
         _waiting = true;
