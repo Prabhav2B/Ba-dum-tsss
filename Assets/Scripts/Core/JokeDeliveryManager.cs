@@ -54,6 +54,7 @@ public class JokeDeliveryManager : MonoBehaviour
     private int _misses;
     private int _targetsEliminated;
     GameManager gm => GameManager.Instance;
+    [SerializeField]AgentManager agentManager;
 
     private void Awake()
     {
@@ -107,10 +108,11 @@ public class JokeDeliveryManager : MonoBehaviour
         ComedyCirclePlayingJoke.CurrentJoke = jokesAndPunchLines[Random.Range(0, jokesAndPunchLines.Count)];
         
         var locationKey = (int)ComedyCirclePlayingJoke.ComedianCircleLocation;
-        var currentLocationLines = this.handlerLocationLines[locationKey];
-        var locationLine = currentLocationLines.AudioClips[Random.Range(0, currentLocationLines.AudioClips.Count)];
-        
-        OnJokeQueue?.Invoke(locationLine);
+        //var currentLocationLines = this.handlerLocationLines[locationKey];
+        //var locationLine = currentLocationLines.AudioClips[Random.Range(0, currentLocationLines.AudioClips.Count)];
+
+        agentManager.PlayLocationLine(locationKey);
+        //OnJokeQueue?.Invoke(locationLine);
         //QueueJoke();
         return true;
     }

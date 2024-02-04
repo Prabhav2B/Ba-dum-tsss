@@ -39,12 +39,13 @@ public class ComedianCircle : MonoBehaviour
     private AudioSource _comedyCircleAudioSource;
 
     private bool _jokeWaiting;
-    
+    private AgentManager _agentManager;
     
     // Start is called before the first frame update
     void Start()
     {
         _jokeDeliveryManager = FindObjectOfType<JokeDeliveryManager>();
+        _agentManager = FindObjectOfType<AgentManager>();
         _comedyCircleAudioSource = GetComponent<AudioSource>();
         
         _audienceMembers = GetComponentsInChildren<AudienceMember>().ToList();
@@ -170,8 +171,7 @@ public class ComedianCircle : MonoBehaviour
 
         if (_jokeDeliveryManager.ComedyCirclePlayingJoke == this)
         {
-            var player = other.gameObject.GetComponent<BaDumTsss>();
-            player.PlayHandlerEnteringJokeZone(EnteringJokeZoneLines[Random.Range(0, EnteringJokeZoneLines.Count)]);
+            _agentManager.PlayEnteringJokeZone();
             QueueJoke();
         }
 

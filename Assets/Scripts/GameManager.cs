@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip loseAudio;
 
     private BaDumTsss _player;
+    private AgentManager _agent;
     
     // Start is called before the first frame update
     void Awake()
@@ -75,7 +76,7 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         currentGoalState = GoalStates.Win;
-        _player.PlayWinDialogue(winAudio);
+        _agent.PlayWin(winAudio);
         winScreen.SetActive(true);
         //Time.timeScale = 0f;
     }
@@ -84,7 +85,7 @@ public class GameManager : MonoBehaviour
     public void Lose()
     {
         currentGoalState = GoalStates.Lose;
-        _player.PlayLoseDialogue(loseAudio);
+        _agent.PlayLose(loseAudio);
         loseScreen.SetActive(true);
         //Time.timeScale = 0f;
     }
