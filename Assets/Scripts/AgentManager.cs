@@ -12,8 +12,8 @@ public class AgentManager : MonoBehaviour
     
     [SerializeField] private List<AudioClip> EnteringJokeZoneLines;
 
-    [Space(5)]
-    [SerializeField] private List<CustomDictionary> handlerLocationLines;
+    //[Space(5)]
+    //[SerializeField] private List<CustomDictionary> handlerLocationLines;
 
     [Space(10)]
     [SerializeField] private List<AudioClip> handlerSuccessLines;
@@ -78,12 +78,12 @@ public class AgentManager : MonoBehaviour
         _audioSource.Play();
     }
    
-    public void PlayLocationLine(int key)
-    {
-        var currentLocationLines = handlerLocationLines[key];
-        var locationLine = currentLocationLines.AudioClips[Random.Range(0, currentLocationLines.AudioClips.Count)];
-        _audioQueue.Enqueue(locationLine);
-    }
+    //public void PlayLocationLine(int key)
+    //{
+    //    var currentLocationLines = handlerLocationLines[key];
+    //    var locationLine = currentLocationLines.AudioClips[Random.Range(0, currentLocationLines.AudioClips.Count)];
+    //    _audioQueue.Enqueue(locationLine);
+    //}
     public void PlayLocationLine(AudioClip[] clips)
     {
         var locationLine = clips[Random.Range(0, clips.Length)];

@@ -9,4 +9,6 @@ public class LocationScriptableObject : ScriptableObject
     //[SerializeField] string locationName;
     public AudioClip[] LocationLines => locationLine; 
     [SerializeField] AudioClip[] locationLine;
+    public Sprite LocationHint => locationHint; 
+    [SerializeField] Sprite locationHint;
 }

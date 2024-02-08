@@ -17,7 +17,7 @@ public class ComedianCircle : MonoBehaviour
     
     [Space(10)]
     [SerializeField] private List<AudioClip> crowdFailureLines;
-    [SerializeField] private List<AudioClip> EnteringJokeZoneLines;
+    //[SerializeField] private List<AudioClip> EnteringJokeZoneLines;
     
     [Space(10)]
     [SerializeField] private List<AudioClip> laughTracks;
