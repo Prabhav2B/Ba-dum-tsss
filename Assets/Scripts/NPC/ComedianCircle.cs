@@ -23,10 +23,12 @@ public class ComedianCircle : MonoBehaviour
     [SerializeField] private List<AudioClip> laughTracks;
     
     [Space(10)]
-    [SerializeField] private ComedianLocation comedianLocation;
+    //[SerializeField] private ComedianLocation comedianLocation;
+    [SerializeField] private LocationScriptableObject location;
+    public AudioClip[] LocationLines => location.LocationLines;
     
     public JokeAndPunchline CurrentJoke { get; set; }
-    public ComedianLocation ComedianCircleLocation => comedianLocation;
+    //public ComedianLocation ComedianCircleLocation => comedianLocation;
     public List<AudienceMember> AudienceMembers => _audienceMembers;
 
     private List<AudienceMember> _audienceMembers;

@@ -107,11 +107,11 @@ public class JokeDeliveryManager : MonoBehaviour
         ComedyCirclePlayingJoke = circle;
         ComedyCirclePlayingJoke.CurrentJoke = jokesAndPunchLines[Random.Range(0, jokesAndPunchLines.Count)];
         
-        var locationKey = (int)ComedyCirclePlayingJoke.ComedianCircleLocation;
+        //var locationKey = (int)ComedyCirclePlayingJoke.ComedianCircleLocation;
         //var currentLocationLines = this.handlerLocationLines[locationKey];
         //var locationLine = currentLocationLines.AudioClips[Random.Range(0, currentLocationLines.AudioClips.Count)];
 
-        agentManager.PlayLocationLine(locationKey);
+        agentManager.PlayLocationLine(circle.LocationLines);
         //OnJokeQueue?.Invoke(locationLine);
         //QueueJoke();
         return true;

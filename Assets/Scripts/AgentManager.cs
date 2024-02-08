@@ -84,6 +84,11 @@ public class AgentManager : MonoBehaviour
         var locationLine = currentLocationLines.AudioClips[Random.Range(0, currentLocationLines.AudioClips.Count)];
         _audioQueue.Enqueue(locationLine);
     }
+    public void PlayLocationLine(AudioClip[] clips)
+    {
+        var locationLine = clips[Random.Range(0, clips.Length)];
+        _audioQueue.Enqueue(locationLine);
+    }
 
     private void PlayJokeHit(AudioClip handlerJokeHit)
     {
