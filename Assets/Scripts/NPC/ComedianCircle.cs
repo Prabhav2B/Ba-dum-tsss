@@ -42,8 +42,15 @@ public class ComedianCircle : MonoBehaviour
 
     private bool _jokeWaiting;
     private AgentManager _agentManager;
-    
-    // Start is called before the first frame update
+
+    float jokePositionInTime=>_comedian.GetJokeTime();
+    //float jokeTimer;
+    //bool jokeStarted;
+    float punchLineTime;
+    public bool JokeDelivered =>jokePositionInTime - punchLineTime > 0.0f;
+    public float JokeSuccessPeriod => jokePositionInTime - punchLineTime;
+
+
     void Start()
     {
         _jokeDeliveryManager = FindObjectOfType<JokeDeliveryManager>();
@@ -66,103 +73,96 @@ public class ComedianCircle : MonoBehaviour
         var comBillboard = _comedian.GetComponentInChildren<BillboardSprite>();
         comBillboard.SetFocusAngle(audienceCentrePosition);
 
-        StartCoroutine(WaitForRandomTime());
+        //StartCoroutine(WaitForRandomTime());
     }
+    public void InitializeJoke(JokeAndPunchline joke)
+    { 
+        CurrentJoke = joke;
+    }
+    //IEnumerator WaitForRandomTime()
+    //{
+    //    yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
 
-    private void OnDisable()
-    {
-        _jokeDeliveryManager.OnJokeHit -= KillAllNPCS;
-        _jokeDeliveryManager.OnFizzle -= NPCDeathGlare;
-    }
-    
+    //    if (!_jokeDeliveryManager.TryGetJoke(this))
+    //    {
+    //        _jokeWaiting = false;
+    //        StartCoroutine(WaitForRandomTime());
+    //    }
+    //}
 
-    public void PlayerInComedyCircle()
-    {
-        _jokeDeliveryManager.OnJokeHit += KillAllNPCS;
-        _jokeDeliveryManager.OnFizzle += NPCDeathGlare;
-    }
-    
-    public void PlayerLeftComedyCircle()
-    {
-        _jokeDeliveryManager.OnJokeHit -= KillAllNPCS;
-        _jokeDeliveryManager.OnFizzle -= NPCDeathGlare;
-    }
-
-    private void NPCDeathGlare(AudioClip handlersuccessaudio)
-    {
-        PlayChirping();
-        PlayAwkwardAudience(crowdFailureLines[Random.Range(0, crowdFailureLines.Count)]);
-        _comedian.JokeFizzleInterrupted();
-        var billboards = GetComponentsInChildren<BillboardSprite>();
-        foreach (var billboard in billboards)
-        {
-            billboard.JokeFizzle();
-        }
-    }
-    
-    private void KillAllNPCS(AudioClip handlerfailaudio)
-    {
-        PlayLaugh(laughTracks[Random.Range(0, laughTracks.Count)]);
-        _comedian.JokeHitInterrupted();
-    }
-
-
-    private void PlayChirping()
-    {
-        _comedyCircleAudioSource.PlayOneShot(chirpSound);
-    }
-
-    private void PlayAwkwardAudience(AudioClip awkwardAudience)
-    {
-        _comedyCircleAudioSource.PlayOneShot(awkwardAudience);
-    }
-    
-    private void PlayLaugh(AudioClip laughTrack)
-    {
-        _comedyCircleAudioSource.PlayOneShot(laughTrack);
-    }
-
-    private void PlayJoke()
-    {
-        _comedian.PlayComedianJoke(CurrentJoke.Joke);
-    }
-
-    IEnumerator WaitForRandomTime()
-    {
-        yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
-
-        if (!_jokeDeliveryManager.TryGetJoke(this))
-        {
-            _jokeWaiting = false;
-            StartCoroutine(WaitForRandomTime());
-        }
-    }
-    
     public void QueueJoke()
     {
-        if(_jokeWaiting) return;
+        if (_jokeWaiting) return;
         _jokeWaiting = true;
         StartCoroutine(JokeWaitingInQueue());
     }
-    
+
     IEnumerator JokeWaitingInQueue()
     {
         yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
         PlayJoke();
     }
-
-    public void FinishedJoke()
+    private void PlayJoke()
     {
-        _jokeDeliveryManager.JokeFinishedPlaying();
-        StartCoroutine(WaitForRandomTime());
+        _comedian.PlayComedianJoke(CurrentJoke.Joke);
+        punchLineTime = CurrentJoke.PunchlineTimeStampInSeconds;
+        //jokeStarted = true;
+    }   
+   
+    private void OnJokeSuccess(/*AudioClip handlerfailaudio*/)
+    {
+        PlayLaugh(laughTracks[Random.Range(0, laughTracks.Count)]);
+        _comedian.OnJokeSuccess();
+    }
+    private void OnJokeFail()
+    {
+        _comedian.OnJokeFail();
+        _comedyCircleAudioSource.PlayOneShot(chirpSound);
+        var awkwardClip = crowdFailureLines[Random.Range(0, crowdFailureLines.Count)];
+        _comedyCircleAudioSource.PlayOneShot(awkwardClip);
+        var billboards = GetComponentsInChildren<BillboardSprite>();
+        foreach (var billboard in billboards)
+        {
+            billboard.OnJokeFail();
+        }
+    }
+    //public void FinishedJoke()
+    //{
+    //    _jokeDeliveryManager.JokeFinishedPlaying();
+    //    StartCoroutine(WaitForRandomTime());
+    //}
+    //private void PlayChirping()
+    //{
+    //    _comedyCircleAudioSource.PlayOneShot(chirpSound);
+    //}
+
+    //private void PlayAwkwardAudience(AudioClip awkwardAudience)
+    //{
+    //    _comedyCircleAudioSource.PlayOneShot(awkwardAudience);
+    //}
+
+    private void PlayLaugh(AudioClip laughTrack)
+    {
+        _comedyCircleAudioSource.PlayOneShot(laughTrack);
+    }
+    public void Dissolve()
+    {
+        //_jokeDeliveryManager.JokeFinishedPlaying();
+        StopAllCoroutines();
+        enabled = false;
+    }
+    public void PlayerInComedyCircle()
+    {
+        _jokeDeliveryManager.OnJokeSuccess += OnJokeSuccess;
+        _jokeDeliveryManager.OnJokeFail += OnJokeFail;
     }
 
-    public float GetJokeTime()
+    public void PlayerLeftComedyCircle()
     {
-        return _comedian.GetJokeTime();
+        _jokeDeliveryManager.OnJokeSuccess -= OnJokeSuccess;
+        _jokeDeliveryManager.OnJokeFail -= OnJokeFail;
     }
-    
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if ((layerMask.value & (1 << other.transform.gameObject.layer)) <= 0) return;
@@ -179,7 +179,7 @@ public class ComedianCircle : MonoBehaviour
 
         PlayerInComedyCircle();
     }
-    
+
     private void OnTriggerExit(Collider other)
     {
         if ((layerMask.value & (1 << other.transform.gameObject.layer)) <= 0) return;
@@ -188,26 +188,9 @@ public class ComedianCircle : MonoBehaviour
         PlayerLeftComedyCircle();
     }
 
-    public enum ComedianLocation
+    private void OnDisable()
     {
-        WaterCooler = 0,
-        MonetPainting = 1,
-        WomenRestroom = 2,
-        Tables = 3,
-        BarCounter = 4,
-        Stage = 5,
-        Kitchen = 6,
-        SmallChandelier = 7, 
-        BiiigChandelier = 8,
-        BackOfTheRoom = 9,
-        Pillar = 10,
-        Tutorial = 99
-    }
-
-    public void Dissolve()
-    {
-        _jokeDeliveryManager.JokeFinishedPlaying();
-        StopAllCoroutines();
-        enabled = false;
+        _jokeDeliveryManager.OnJokeSuccess -= OnJokeSuccess;
+        _jokeDeliveryManager.OnJokeFail -= OnJokeFail;
     }
 }

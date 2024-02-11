@@ -72,10 +72,10 @@ public class Comedian : MonoBehaviour
             if(!_comedianAudioSource.isPlaying)
                 _comedianAudioSource.UnPause();
         }
-        if (_comedianAudioSource.isPlaying) return;
-        _isPlayingJoke = false;
-        _myComedianCircle.FinishedJoke();
-        _comedianAudioSource.clip = null;
+        //if (_comedianAudioSource.isPlaying) return;
+        //_isPlayingJoke = false;
+        //_myComedianCircle.FinishedJoke();
+        //_comedianAudioSource.clip = null;
     }
 
     public void PlayComedianJoke(AudioClip jokeClip)
@@ -87,15 +87,15 @@ public class Comedian : MonoBehaviour
         AudioManager.Instance.JokeOngoing();
     }
 
-    public void JokeFizzleInterrupted()
+    public void OnJokeFail()
     {
-        _comedianAudioSource.Pause();
+        _comedianAudioSource.Stop();
         StartCoroutine(AwkwardSilence());
     }
     
-    public void JokeHitInterrupted()
+    public void OnJokeSuccess()
     {
-        _comedianAudioSource.Pause();
+        _comedianAudioSource.Stop();
         StartCoroutine(WaitTillDie());
     }
 

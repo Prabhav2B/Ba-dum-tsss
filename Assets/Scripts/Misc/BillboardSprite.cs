@@ -43,7 +43,7 @@ public class BillboardSprite : MonoBehaviour
         transform.DORotateQuaternion(target_rot, 0.5f);
     }
 
-    public void JokeFizzle()
+    public void OnJokeFail()
     {
         StartCoroutine(WaitAndStare());
     }

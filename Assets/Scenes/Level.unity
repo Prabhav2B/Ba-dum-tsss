@@ -25420,6 +25420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924597702438856297, guid: 4edd0bf74423f6c459b58de882cbc247,
         type: 3}
+      propertyPath: skipIntro
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924597702438856297, guid: 4edd0bf74423f6c459b58de882cbc247,
+        type: 3}
       propertyPath: _jokeDeliveryManager
       value: 
       objectReference: {fileID: 727432240}
@@ -25691,10 +25696,10 @@ SceneRoots:
   - {fileID: 1886170797}
   - {fileID: 387807266}
   - {fileID: 1507167454}
-  - {fileID: 2886691510818839335}
   - {fileID: 806600851}
   - {fileID: 736147007}
   - {fileID: 76625861}
   - {fileID: 1601352042}
   - {fileID: 8563367889351230500}
   - {fileID: 727432239}
+  - {fileID: 2886691510818839335}

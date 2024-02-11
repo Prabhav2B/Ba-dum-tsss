@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AgentManager : MonoBehaviour
 {
+    [SerializeField] private bool skipIntro;
     [SerializeField] private float introDelay;
     [SerializeField] private float pauseBetweenQueues;
     float pauseTimer;
@@ -27,26 +28,25 @@ public class AgentManager : MonoBehaviour
     private bool _waiting = false;
     GameManager gm => GameManager.Instance;
 
-
     void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
         _audioQueue = new Queue<AudioClip>();
         //_audioQueue.Enqueue(introLines);
-        Invoke(nameof(PlayIntro), introDelay);
+        StartCoroutine(PlayIntro());
     }
     private void OnEnable()
     {
         //_jokeDeliveryManager.OnJokeQueue += PlayLocationLine;
-        _jokeDeliveryManager.OnJokeHit += PlayJokeHit;
-        _jokeDeliveryManager.OnFizzle += PlayJokeFizzle;
+        _jokeDeliveryManager.OnJokeSuccess += PlayJokeHit;
+        _jokeDeliveryManager.OnJokeFail += PlayJokeFail;
     }
 
     private void OnDisable()
     {
         //_jokeDeliveryManager.OnJokeQueue -= PlayLocationLine;
-        _jokeDeliveryManager.OnJokeHit -= PlayJokeHit;
-        _jokeDeliveryManager.OnFizzle -= PlayJokeFizzle;
+        _jokeDeliveryManager.OnJokeSuccess -= PlayJokeHit;
+        _jokeDeliveryManager.OnJokeFail -= PlayJokeFail;
     }
     private void Update()
     {
@@ -72,27 +72,27 @@ public class AgentManager : MonoBehaviour
         pauseTimer = 0;
         return false;
     }
-    void PlayIntro()
+    IEnumerator PlayIntro()
     {
-        _audioSource.clip = introLines;
-        _audioSource.Play();
+        if (!skipIntro)
+        {
+            yield return new WaitForSeconds(introDelay);
+            _audioSource.clip = introLines;
+            _audioSource.Play();
+            yield return new WaitForSeconds(introLines.length);
+        }       
+        _jokeDeliveryManager.LookForComedians();
     }
-   
-    //public void PlayLocationLine(int key)
-    //{
-    //    var currentLocationLines = handlerLocationLines[key];
-    //    var locationLine = currentLocationLines.AudioClips[Random.Range(0, currentLocationLines.AudioClips.Count)];
-    //    _audioQueue.Enqueue(locationLine);
-    //}
     public void PlayLocationLine(AudioClip[] clips)
     {
         var locationLine = clips[Random.Range(0, clips.Length)];
         _audioQueue.Enqueue(locationLine);
     }
 
-    private void PlayJokeHit(AudioClip handlerJokeHit)
+    private void PlayJokeHit()
     {
-        StartCoroutine(SuccessDelay(handlerJokeHit));
+        var line = handlerSuccessLines[Random.Range(0, handlerSuccessLines.Count)];
+        StartCoroutine(SuccessDelay(line));
         //_audioQueue.Enqueue(handlerJokeHit);
     }
     private IEnumerator SuccessDelay(AudioClip handlerJokeHit)
@@ -106,9 +106,10 @@ public class AgentManager : MonoBehaviour
         _audioSource.PlayOneShot(handlerJokeZone);
     }
 
-    private void PlayJokeFizzle(AudioClip handlerJokeFail)
+    private void PlayJokeFail()
     {
-        _audioQueue.Enqueue(handlerJokeFail);
+        var line = handlerFailureLines[Random.Range(0, handlerFailureLines.Count)];
+        _audioQueue.Enqueue(line);
     }
     public void PlayWin(AudioClip winAudio)
     {
