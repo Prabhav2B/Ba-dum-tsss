@@ -8374,16 +8374,6 @@ PrefabInstance:
       propertyPath: agentManager
       value: 
       objectReference: {fileID: 1388410426}
-    - target: {fileID: 6590303897479862347, guid: 5b03b38a4b8e979458f1321df5711f2b,
-        type: 3}
-      propertyPath: missesForLose
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6590303897479862347, guid: 5b03b38a4b8e979458f1321df5711f2b,
-        type: 3}
-      propertyPath: jokeHitTolerance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8465586123828313089, guid: 5b03b38a4b8e979458f1321df5711f2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25417,11 +25407,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AgentManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6924597702438856297, guid: 4edd0bf74423f6c459b58de882cbc247,
-        type: 3}
-      propertyPath: skipIntro
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6924597702438856297, guid: 4edd0bf74423f6c459b58de882cbc247,
         type: 3}

@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cece465cc0c8e734b82cbdb704d0896b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skipIntro: 1
   introDelay: 2
-  pauseBetweenQueues: 2
+  pauseBetweenQueues: 1.5
   introLines: {fileID: 8300000, guid: dd544ea918636db409e6873c5220d367, type: 3}
   _jokeDeliveryManager: {fileID: 0}
   EnteringJokeZoneLines:
@@ -55,41 +56,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2d35d95e8378318468977e5e392dfac3, type: 3}
   - {fileID: 8300000, guid: 486ea885c35ca52448740086b70dcdff, type: 3}
   - {fileID: 8300000, guid: 0c1b8c33f65916547beb9c853219f7d4, type: 3}
-  handlerLocationLines:
-  - key: 0
-    audioClips:
-    - {fileID: 8300000, guid: 24fd7c81ad1bbd149b400aa1d4b1f5a8, type: 3}
-  - key: 1
-    audioClips:
-    - {fileID: 8300000, guid: f5666ce240a65d64b864bfb3d7145222, type: 3}
-  - key: 2
-    audioClips:
-    - {fileID: 8300000, guid: 8365d383b10582f4699293ce52da08a7, type: 3}
-  - key: 3
-    audioClips:
-    - {fileID: 8300000, guid: ea8a5910ff9a8ad47b734add4380ef1c, type: 3}
-  - key: 4
-    audioClips:
-    - {fileID: 8300000, guid: 9ce668c5344a960478bce4a63cf74315, type: 3}
-    - {fileID: 8300000, guid: e51964e8d7df43a4dacf05faa76390d9, type: 3}
-  - key: 5
-    audioClips:
-    - {fileID: 8300000, guid: 9bc3348e9bd06a3448d38d50b839e866, type: 3}
-  - key: 6
-    audioClips:
-    - {fileID: 8300000, guid: a2a98d71d0541c9448987e11ea8a20e3, type: 3}
-  - key: 7
-    audioClips:
-    - {fileID: 8300000, guid: 3a31adfc320875f40a898246e245a898, type: 3}
-  - key: 8
-    audioClips:
-    - {fileID: 8300000, guid: 74f2ecd434b977c448c5d4d8974b738e, type: 3}
-  - key: 9
-    audioClips:
-    - {fileID: 8300000, guid: ebb15f34708a2e94391f3324c77d5ad9, type: 3}
-  - key: 10
-    audioClips:
-    - {fileID: 8300000, guid: 99978e21a1e72684da80cc776a59e1fe, type: 3}
   handlerSuccessLines:
   - {fileID: 8300000, guid: fbc063ee35a7b6949afec4c4c45aa26b, type: 3}
   - {fileID: 8300000, guid: a5b775cec3ad45c40bb8156d422c14c0, type: 3}

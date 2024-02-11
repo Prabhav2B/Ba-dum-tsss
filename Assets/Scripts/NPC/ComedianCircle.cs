@@ -47,6 +47,8 @@ public class ComedianCircle : MonoBehaviour
     //float jokeTimer;
     //bool jokeStarted;
     float punchLineTime;
+    public bool JokePlaying => jokePlaying;
+    bool jokePlaying;
     public bool JokeDelivered =>jokePositionInTime - punchLineTime > 0.0f;
     public float JokeSuccessPeriod => jokePositionInTime - punchLineTime;
 
@@ -90,32 +92,41 @@ public class ComedianCircle : MonoBehaviour
     //    }
     //}
 
-    public void QueueJoke()
+    IEnumerator StartJoking()
     {
-        if (_jokeWaiting) return;
-        _jokeWaiting = true;
-        StartCoroutine(JokeWaitingInQueue());
-    }
-
-    IEnumerator JokeWaitingInQueue()
-    {
-        yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
-        PlayJoke();
-    }
-    private void PlayJoke()
-    {
+        if (jokePlaying) yield break;
+        _comedian.Joking();
+        yield return _agentManager.PlayEnteringJokeZone();
         _comedian.PlayComedianJoke(CurrentJoke.Joke);
         punchLineTime = CurrentJoke.PunchlineTimeStampInSeconds;
-        //jokeStarted = true;
-    }   
+        jokePlaying = true;
+        //if (_jokeWaiting) return;
+        //_jokeWaiting = true;
+        //StartCoroutine(JokeWaitingInQueue());
+    }
+
+    //IEnumerator JokeWaitingInQueue()
+    //{
+    //    yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
+    //    PlayJoke();
+    //}
+    //private void PlayJoke()
+    //{
+    //    _comedian.PlayComedianJoke(CurrentJoke.Joke);
+    //    punchLineTime = CurrentJoke.PunchlineTimeStampInSeconds;
+    //    jokePlaying = true;
+    //    //jokeStarted = true;
+    //}   
    
     private void OnJokeSuccess(/*AudioClip handlerfailaudio*/)
     {
+        jokePlaying = false;
         PlayLaugh(laughTracks[Random.Range(0, laughTracks.Count)]);
         _comedian.OnJokeSuccess();
     }
     private void OnJokeFail()
     {
+        jokePlaying = false;
         _comedian.OnJokeFail();
         _comedyCircleAudioSource.PlayOneShot(chirpSound);
         var awkwardClip = crowdFailureLines[Random.Range(0, crowdFailureLines.Count)];
@@ -173,8 +184,8 @@ public class ComedianCircle : MonoBehaviour
 
         if (_jokeDeliveryManager.ComedyCirclePlayingJoke == this)
         {
-            _agentManager.PlayEnteringJokeZone();
-            QueueJoke();
+            //_agentManager.PlayEnteringJokeZone();
+            StartCoroutine(StartJoking());
         }
 
         PlayerInComedyCircle();

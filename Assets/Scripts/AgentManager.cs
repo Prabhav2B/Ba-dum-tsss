@@ -23,7 +23,7 @@ public class AgentManager : MonoBehaviour
     [SerializeField] private List<AudioClip> handlerFailureLines;
 
 
-    private Queue<AudioClip> _audioQueue;
+    private Queue<AudioClip> _locationAudioQueue;
     private AudioSource _audioSource;
     private bool _waiting = false;
     GameManager gm => GameManager.Instance;
@@ -31,21 +31,21 @@ public class AgentManager : MonoBehaviour
     void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
-        _audioQueue = new Queue<AudioClip>();
+        _locationAudioQueue = new Queue<AudioClip>();
         //_audioQueue.Enqueue(introLines);
         StartCoroutine(PlayIntro());
     }
     private void OnEnable()
     {
         //_jokeDeliveryManager.OnJokeQueue += PlayLocationLine;
-        _jokeDeliveryManager.OnJokeSuccess += PlayJokeHit;
+        _jokeDeliveryManager.OnJokeSuccess += PlayJokeSuccess;
         _jokeDeliveryManager.OnJokeFail += PlayJokeFail;
     }
 
     private void OnDisable()
     {
         //_jokeDeliveryManager.OnJokeQueue -= PlayLocationLine;
-        _jokeDeliveryManager.OnJokeSuccess -= PlayJokeHit;
+        _jokeDeliveryManager.OnJokeSuccess -= PlayJokeSuccess;
         _jokeDeliveryManager.OnJokeFail -= PlayJokeFail;
     }
     private void Update()
@@ -59,19 +59,22 @@ public class AgentManager : MonoBehaviour
 
         if (!_audioSource.isPlaying)
             _audioSource.UnPause();
-        
-        if (_audioQueue.Count == 0 || _audioSource.isPlaying) return;
-        if (PausingBetweenQueues()) return;
-        _audioSource.clip = _audioQueue.Dequeue();
-        _audioSource.Play();        
+
+        //if(_jokeDeliveryManager.ComedyCirclePlayingJoke.JokePlaying)
+        //    _audioSource.Stop();
+
+        //if (_locationAudioQueue.Count == 0 || _audioSource.isPlaying) return;
+        //if (PausingBetweenQueues()) return;
+        //_audioSource.clip = _locationAudioQueue.Dequeue();
+        //_audioSource.Play();
     }
-    bool PausingBetweenQueues()
-    {
-        pauseTimer += Time.deltaTime;
-        if (pauseTimer < pauseBetweenQueues) return true;
-        pauseTimer = 0;
-        return false;
-    }
+    //bool PausingBetweenQueues()
+    //{
+    //    pauseTimer += Time.deltaTime;
+    //    if (pauseTimer < pauseBetweenQueues) return true;
+    //    pauseTimer = 0;
+    //    return false;
+    //}
     IEnumerator PlayIntro()
     {
         if (!skipIntro)
@@ -86,10 +89,15 @@ public class AgentManager : MonoBehaviour
     public void PlayLocationLine(AudioClip[] clips)
     {
         var locationLine = clips[Random.Range(0, clips.Length)];
-        _audioQueue.Enqueue(locationLine);
+        _locationAudioQueue.Enqueue(locationLine);        
     }
-
-    private void PlayJokeHit()
+    public IEnumerator PlayEnteringJokeZone()
+    {
+        var handlerJokeZone = EnteringJokeZoneLines[Random.Range(0, EnteringJokeZoneLines.Count)];
+        _audioSource.PlayOneShot(handlerJokeZone);
+        yield return new WaitForSeconds(handlerJokeZone.length - 0.5f);
+    }
+    private void PlayJokeSuccess()
     {
         var line = handlerSuccessLines[Random.Range(0, handlerSuccessLines.Count)];
         StartCoroutine(SuccessDelay(line));
@@ -98,29 +106,24 @@ public class AgentManager : MonoBehaviour
     private IEnumerator SuccessDelay(AudioClip handlerJokeHit)
     {
         yield return new WaitForSeconds(3f);
-        _audioQueue.Enqueue(handlerJokeHit);
-    }
-    public void PlayEnteringJokeZone()
-    {
-        AudioClip handlerJokeZone = EnteringJokeZoneLines[Random.Range(0, EnteringJokeZoneLines.Count)];
-        _audioSource.PlayOneShot(handlerJokeZone);
+        _audioSource.PlayOneShot(handlerJokeHit);
     }
 
     private void PlayJokeFail()
     {
         var line = handlerFailureLines[Random.Range(0, handlerFailureLines.Count)];
-        _audioQueue.Enqueue(line);
+        _audioSource.PlayOneShot(line);
     }
     public void PlayWin(AudioClip winAudio)
     {
-        _audioQueue.Clear();
+        _locationAudioQueue.Clear();
         _audioSource.clip = winAudio;
         _audioSource.Play();
     }
 
     public void PlayLose(AudioClip loseAudio)
     {
-        _audioQueue.Clear();
+        _locationAudioQueue.Clear();
         _audioSource.clip = loseAudio;
         _audioSource.Play();
     }

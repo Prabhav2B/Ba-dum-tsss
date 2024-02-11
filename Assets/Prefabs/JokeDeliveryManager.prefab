@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed28b8a846460c4886b66b431669995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jokeHitTolerance: 1.9
+  missesForLose: 3
+  totalTargets: 5
+  jokeHitTolerance: 2
+  pauseBeforeFindingComedianCircle: 2
   cricketChirp: {fileID: 8300000, guid: 30a99170df006ec48a9c0d7a5e346ef8, type: 3}
   jokesAndPunchLines:
   - joke: {fileID: 8300000, guid: bc46921592c258f45a00e08a141bddca, type: 3}
@@ -104,16 +107,4 @@ MonoBehaviour:
   - key: 10
     audioClips:
     - {fileID: 8300000, guid: 99978e21a1e72684da80cc776a59e1fe, type: 3}
-  handlerSuccessLines:
-  - {fileID: 8300000, guid: fbc063ee35a7b6949afec4c4c45aa26b, type: 3}
-  - {fileID: 8300000, guid: a5b775cec3ad45c40bb8156d422c14c0, type: 3}
-  - {fileID: 8300000, guid: 041fc80e003d3ab4c89aa1e8d451a005, type: 3}
-  - {fileID: 8300000, guid: 6f37e8476a53a20439bbbc3b04896786, type: 3}
-  - {fileID: 8300000, guid: b6d9d515e7d925c4993e35b373bd4902, type: 3}
-  - {fileID: 8300000, guid: f4e6a9df91c40a145935d41b45f65cd7, type: 3}
-  - {fileID: 8300000, guid: 4c2e0ae2e87ad2e4ab36d040ddbb493b, type: 3}
-  handlerFailureLines:
-  - {fileID: 8300000, guid: 001ce21f34c15444aa87b4fcb87a7995, type: 3}
-  - {fileID: 8300000, guid: cb26845984dfdc84b80b5796341d1f4b, type: 3}
-  - {fileID: 8300000, guid: c83c519046d53104c985e9b2c859a261, type: 3}
-  - {fileID: 8300000, guid: 73122a97c04ac85428061e46e355832f, type: 3}
+  agentManager: {fileID: 0}

@@ -101,7 +101,7 @@ public class JokeDeliveryManager : MonoBehaviour
     private void Update()
     {
         if (gm.IsPaused) return;
-        if (!PlayerInComedyCircle) return;
+        //if (!PlayerInComedyCircle) return;
         if (ComedyCirclePlayingJoke == null) return;
         if (CurrentComedyCircle != ComedyCirclePlayingJoke) return;
 

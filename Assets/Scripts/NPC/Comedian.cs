@@ -77,13 +77,11 @@ public class Comedian : MonoBehaviour
         //_myComedianCircle.FinishedJoke();
         //_comedianAudioSource.clip = null;
     }
-
     public void PlayComedianJoke(AudioClip jokeClip)
     {
         _comedianAudioSource.clip = jokeClip;
         _comedianAudioSource.Play();
         _isPlayingJoke = true;
-        Joking();
         AudioManager.Instance.JokeOngoing();
     }
 
