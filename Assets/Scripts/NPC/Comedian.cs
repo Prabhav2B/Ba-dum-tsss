@@ -72,17 +72,13 @@ public class Comedian : MonoBehaviour
             if(!_comedianAudioSource.isPlaying)
                 _comedianAudioSource.UnPause();
         }
-        //if (_comedianAudioSource.isPlaying) return;
-        //_isPlayingJoke = false;
-        //_myComedianCircle.FinishedJoke();
-        //_comedianAudioSource.clip = null;
     }
     public void PlayComedianJoke(AudioClip jokeClip)
     {
+        AudioManager.Instance.JokeOngoing();
         _comedianAudioSource.clip = jokeClip;
         _comedianAudioSource.Play();
         _isPlayingJoke = true;
-        AudioManager.Instance.JokeOngoing();
     }
 
     public void OnJokeFail()
@@ -110,6 +106,7 @@ public class Comedian : MonoBehaviour
             audience.Awkward();
         }
         yield return new WaitForSeconds(awkwardSilenceTime);
+        AudioManager.Instance.JokeOff();
         _comedianAudioSource.Stop();
         
         Idle();
@@ -117,31 +114,26 @@ public class Comedian : MonoBehaviour
         {
             audience.Idle();
         }
-        AudioManager.Instance.JokeOff();
     }
     
     private IEnumerator WaitTillDie()
     {
         Laugh();
         foreach (var audience in _myComedianCircle.AudienceMembers)
-        {
             audience.Laugh();
-        }
+
         yield return new WaitForSeconds(laughTime);
+        AudioManager.Instance.JokeOff();
         Dead();
         foreach (var audience in _myComedianCircle.AudienceMembers)
-        {
             audience.Dead();
-        }
 
         var deathfx = transform.parent.GetComponentInChildren<ParticleSystem>(true);
         deathfx.gameObject.SetActive(true);
-        //deathfx.Play();
         
         _isPlayingJoke = false;
         _comedianAudioSource.clip = null;
         _myComedianCircle.Dissolve();
-        AudioManager.Instance.JokeOff();
     }
     public void Idle()
     {

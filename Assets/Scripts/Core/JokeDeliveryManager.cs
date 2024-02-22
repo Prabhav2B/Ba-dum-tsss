@@ -10,10 +10,12 @@ using Random = UnityEngine.Random;
 
 public class JokeDeliveryManager : MonoBehaviour
 {
-
     [SerializeField] private int missesForLose = 4;
     [SerializeField] private int totalTargets = 15;
-    
+    [Space(10)]
+    [SerializeField] int currentMisses;
+    [SerializeField] int currentSuccess;
+
     [Space(10)]
     [Range(0f, 2f)]
     [SerializeField] private float jokeHitTolerance = 1f;
@@ -24,25 +26,9 @@ public class JokeDeliveryManager : MonoBehaviour
     [SerializeField] private List<JokeAndPunchline> jokesAndPunchLines;
     
     [Space(5)]
-    [SerializeField] private List<CustomDictionary> handlerLocationLines;
-    
-    //[Space(10)]
-    //[SerializeField] private List<AudioClip> handlerSuccessLines;
-    
-    //[Space(10)]
-    //[SerializeField] private List<AudioClip> handlerFailureLines;
-    
+    [SerializeField] private List<CustomDictionary> handlerLocationLines;      
     
     private List<ComedianCircle> _comedianCircles;
-
-    public delegate void FizzleEvent(/*AudioClip handlerSuccessAudio*/); 
-    public FizzleEvent OnJokeFail;
-    
-    public delegate void JokeHitEvent(/*AudioClip handlerFailureAudio*/); 
-    public JokeHitEvent OnJokeSuccess;
-    
-    public delegate void JokeQueueEvent(AudioClip handlerAudio); 
-    public JokeQueueEvent OnJokeQueue;
     
     public bool PlayerInComedyCircle { get; set; }
     public ComedianCircle CurrentComedyCircle { get; set; }
@@ -50,19 +36,12 @@ public class JokeDeliveryManager : MonoBehaviour
     public ComedianCircle ComedyCirclePlayingJoke { get; set; }
     
     public bool PreventHitSpam { get; set; }
-
-    private GameManager _gameManager;
     
-    private int _misses;
-    private int _targetsEliminated;
     GameManager gm => GameManager.Instance;
     [SerializeField]AgentManager agentManager;
+    [SerializeField]JokeLocationUI locationUi;
 
-    private void Awake()
-    {
-        _gameManager = FindObjectOfType<GameManager>();
-    }
-
+   
     void Start()
     {
         _comedianCircles = FindObjectsOfType<ComedianCircle>().ToList();
@@ -75,33 +54,24 @@ public class JokeDeliveryManager : MonoBehaviour
         if (ComedyCirclePlayingJoke == null) return;
         if (CurrentComedyCircle != ComedyCirclePlayingJoke) return;
 
-        if (!ComedyCirclePlayingJoke.JokeDelivered)
+        if (!ComedyCirclePlayingJoke.JokeDelivered || ComedyCirclePlayingJoke.JokeSuccessPeriod > jokeHitTolerance)
         {
             JokeFail();
             return;
-        } 
-        
-        if (ComedyCirclePlayingJoke.JokeSuccessPeriod < jokeHitTolerance)
-        {
-            if(PreventHitSpam) return;
-            
-            PreventHitSpam = true;
-            OnJokeSuccess?.Invoke();
-            _targetsEliminated++;
-            if (_targetsEliminated == totalTargets)
-            {
-                _gameManager.Win();
-            }
         }
-        else
+        if (PreventHitSpam) return;
+
+        PreventHitSpam = true;
+        JokeSuccess();
+        currentSuccess++;
+        if (currentSuccess == totalTargets)
         {
-            JokeFail();
+            gm.Win();
         }
     }
     private void Update()
     {
         if (gm.IsPaused) return;
-        //if (!PlayerInComedyCircle) return;
         if (ComedyCirclePlayingJoke == null) return;
         if (CurrentComedyCircle != ComedyCirclePlayingJoke) return;
 
@@ -109,28 +79,40 @@ public class JokeDeliveryManager : MonoBehaviour
         if (ComedyCirclePlayingJoke.JokeSuccessPeriod < jokeHitTolerance) return;
         JokeFail();
     }
-    public void JokeSuccess()
+    private void JokeSuccess()
     {
-        OnJokeSuccess?.Invoke();
-        _targetsEliminated++;
-        if (_targetsEliminated == totalTargets)
-            _gameManager.Win();
-        else
-            LookForComedians();
+        locationUi.LocationBlank();
+        ComedyCirclePlayingJoke.JokeSuccess();
+        agentManager.JokeSuccess();
+        RemoveComedyCircleFromList();
+        currentSuccess++;
+        if (currentSuccess == totalTargets)
+        {
+            agentManager.PlayWin();
+            gm.Win();
+        }
     }
-    public void JokeFail()
+    private void JokeFail()
     {
+        locationUi.LocationBlank();
+        ComedyCirclePlayingJoke.JokeFail();
+        agentManager.JokeFail();
         ComedyCirclePlayingJoke = null;
-        OnJokeFail?.Invoke();
-        _misses++;
-        if (_misses == missesForLose)
-            _gameManager.Lose();
-        else
-            LookForComedians();
+        currentMisses++;
+        if (currentMisses == missesForLose)
+        { 
+            agentManager.PlayLose();
+            gm.Lose();
+        }
     }
-
+    void RemoveComedyCircleFromList()
+    {
+        _comedianCircles.Remove(ComedyCirclePlayingJoke);
+        ComedyCirclePlayingJoke = null;
+    }
     public void LookForComedians()
     {
+        if (gm.IsGameOver) return;
         StartCoroutine(FindComedianCircle());
     }
     IEnumerator FindComedianCircle()
@@ -140,31 +122,10 @@ public class JokeDeliveryManager : MonoBehaviour
         ComedyCirclePlayingJoke = _comedianCircles[Random.Range(0, _comedianCircles.Count)];
         ComedyCirclePlayingJoke.InitializeJoke(jokesAndPunchLines[Random.Range(0, jokesAndPunchLines.Count)]);
         agentManager.PlayLocationLine(ComedyCirclePlayingJoke.LocationLines);
+        locationUi.LocationUpdate(ComedyCirclePlayingJoke.LocationInfo);
     }
     void RepeatLocationLine()
     {
         agentManager.PlayLocationLine(ComedyCirclePlayingJoke.LocationLines);
     }
-    //public bool TryGetJoke(ComedianCircle circle)
-    //{
-    //    if (ComedyCirclePlayingJoke != null) return false;
-
-    //    ComedyCirclePlayingJoke = circle;
-    //    ComedyCirclePlayingJoke.InitializeJoke(jokesAndPunchLines[Random.Range(0, jokesAndPunchLines.Count)]);
-        
-    //    //var locationKey = (int)ComedyCirclePlayingJoke.ComedianCircleLocation;
-    //    //var currentLocationLines = this.handlerLocationLines[locationKey];
-    //    //var locationLine = currentLocationLines.AudioClips[Random.Range(0, currentLocationLines.AudioClips.Count)];
-
-    //    agentManager.PlayLocationLine(circle.LocationLines);
-    //    //OnJokeQueue?.Invoke(locationLine);
-    //    //QueueJoke();
-    //    return true;
-    //}
-
-    //public void JokeFinishedPlaying()
-    //{
-    //    ComedyCirclePlayingJoke = null;
-    //}
-
 }

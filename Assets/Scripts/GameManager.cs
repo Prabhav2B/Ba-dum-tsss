@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
-    [SerializeField] private AudioClip winAudio;
-    [SerializeField] private AudioClip loseAudio;
 
     private BaDumTsss _player;
     private AgentManager _agent;
@@ -76,7 +74,6 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         currentGoalState = GoalStates.Win;
-        _agent.PlayWin(winAudio);
         winScreen.SetActive(true);
         //Time.timeScale = 0f;
     }
@@ -85,7 +82,6 @@ public class GameManager : MonoBehaviour
     public void Lose()
     {
         currentGoalState = GoalStates.Lose;
-        _agent.PlayLose(loseAudio);
         loseScreen.SetActive(true);
         //Time.timeScale = 0f;
     }

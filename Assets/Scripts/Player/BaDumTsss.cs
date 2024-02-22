@@ -40,10 +40,6 @@ public class BaDumTsss : MonoBehaviour
 
     private bool _ba = false;
     private bool _dum = false;
-    private bool _waiting = false;
-
-    private Queue<AudioClip> _audioQueue;
-    GameManager gm => GameManager.Instance;
 
 
     private void Awake()
@@ -59,96 +55,7 @@ public class BaDumTsss : MonoBehaviour
 
         _originalColorBa = drumSpriteBa.color;
         _originalColorTss = drumSpriteTss.color;
-
-        //_audioQueue = new Queue<AudioClip>();
-        //_audioQueue.Enqueue(startAudio);
-    }
-
-    //private void OnEnable()
-    //{
-    //    _jokeDeliveryManager.OnJokeQueue += PlayHandlerJokeQueueLine;
-    //    _jokeDeliveryManager.OnJokeHit += PlayHandlerSuccessLine;
-    //    _jokeDeliveryManager.OnFizzle += PlayHandlerFailureLine;
-    //}
-    
-    //private void OnDisable()
-    //{
-    //    _jokeDeliveryManager.OnJokeQueue -= PlayHandlerJokeQueueLine;
-    //    _jokeDeliveryManager.OnJokeHit -= PlayHandlerSuccessLine;
-    //    _jokeDeliveryManager.OnFizzle -= PlayHandlerFailureLine;
-    //}
-
-    //public void PlayWinDialogue(AudioClip winAudio)
-    //{
-    //    _audioQueue.Clear();
-    //    _audioSource.clip = winAudio;
-    //    _audioSource.Play();
-    //}
-
-    //public void PlayLoseDialogue(AudioClip loseAudio)
-    //{
-    //    _audioQueue.Clear();
-    //    _audioSource.clip = loseAudio;
-    //    _audioSource.Play();
-    //}
-   // private void PlayHandlerJokeQueueLine(AudioClip handlerJokeQueueLine)
-    //{
-    //    _audioQueue.Enqueue(handlerJokeQueueLine);
-    //}
-    
-    //private void PlayHandlerSuccessLine(AudioClip handlerJokeHit)
-    //{
-    //    StartCoroutine(WaitForABitWhenKill(handlerJokeHit));
-    //    //_audioQueue.Enqueue(handlerJokeHit);
-    //}
-    
-    //public void PlayHandlerEnteringJokeZone(AudioClip handlerJokeZone)
-    //{
-    //    _audioSource.PlayOneShot(handlerJokeZone);
-    //}
-    
-    //private void PlayHandlerFailureLine(AudioClip handlerJokeFail)
-    //{
-    //    _audioQueue.Enqueue(handlerJokeFail);
-    //}
-
-    private void Update()
-    {
-    //    if (gm.IsPaused)
-    //    {
-    //        if(_audioSource.isPlaying)
-    //            _audioSource.Pause();
-    //        return;
-    //    }
-    //    else
-    //    {
-    //        if (!_audioSource.isPlaying)
-    //            _audioSource.UnPause();
-
-    //    }
-
-
-    //    if(_audioQueue.Count == 0 || _audioSource.isPlaying) return;
-    //    if(_waiting) return;
-    //    _waiting = true;
-    //    StartCoroutine(WaitForABit());
-    }
-
-    //private IEnumerator WaitForABitWhenKill(AudioClip handlerJokeHit)
-    //{
-    //    yield return new WaitForSeconds(4f);
-    //    _audioQueue.Enqueue(handlerJokeHit);
-    //}
-
-    //private IEnumerator WaitForABit()
-    //{
-    //    yield return new WaitForSeconds(3f);
-    //    _audioSource.clip = _audioQueue.Dequeue();
-    //    _audioSource.Play();
-    //    _waiting = false;
-    //}
-
-
+    }  
     #region BaDumTss
     
     public void OnBa(InputValue value)

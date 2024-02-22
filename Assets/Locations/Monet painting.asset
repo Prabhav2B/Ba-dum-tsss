@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b57b9b92e757b9248ae424e847f4a5b9, type: 3}
-  m_Name: SmallChandelier
+  m_Name: Monet painting
   m_EditorClassIdentifier: 
   locationLine:
-  - {fileID: 8300000, guid: 3a31adfc320875f40a898246e245a898, type: 3}
+  - {fileID: 8300000, guid: f5666ce240a65d64b864bfb3d7145222, type: 3}

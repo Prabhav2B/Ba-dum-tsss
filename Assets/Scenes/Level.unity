@@ -8371,6 +8371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6590303897479862347, guid: 5b03b38a4b8e979458f1321df5711f2b,
         type: 3}
+      propertyPath: locationUi
+      value: 
+      objectReference: {fileID: 1152841090}
+    - target: {fileID: 6590303897479862347, guid: 5b03b38a4b8e979458f1321df5711f2b,
+        type: 3}
       propertyPath: agentManager
       value: 
       objectReference: {fileID: 1388410426}
@@ -8569,8 +8574,6 @@ MonoBehaviour:
   pauseUi: {fileID: 1194607615}
   winScreen: {fileID: 4508606146841867245}
   loseScreen: {fileID: 214239803762282125}
-  winAudio: {fileID: 8300000, guid: 9f1a113c1f846c743841b1746997f190, type: 3}
-  loseAudio: {fileID: 8300000, guid: d0d1fa96e9f9c2546a9fa0175dc5d24f, type: 3}
 --- !u!1001 &745379351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12145,13 +12148,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1152841088}
   - component: {fileID: 1152841089}
+  - component: {fileID: 1152841090}
   m_Layer: 5
   m_Name: JokeLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1152841088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12181,6 +12185,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152841087}
   m_CullTransparentMesh: 1
+--- !u!114 &1152841090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152841087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f01454a3eb77e044ab2f07a02bc0cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationImage: {fileID: 1577196321}
+  locationName: {fileID: 146918387}
 --- !u!1 &1179473294
 GameObject:
   m_ObjectHideFlags: 0
@@ -25456,6 +25474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AgentManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924597702438856297, guid: 4edd0bf74423f6c459b58de882cbc247,
+        type: 3}
+      propertyPath: skipIntro
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6924597702438856297, guid: 4edd0bf74423f6c459b58de882cbc247,
         type: 3}

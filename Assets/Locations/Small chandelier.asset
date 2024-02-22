@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b57b9b92e757b9248ae424e847f4a5b9, type: 3}
-  m_Name: BarCounter
+  m_Name: Small chandelier
   m_EditorClassIdentifier: 
   locationLine:
-  - {fileID: 8300000, guid: 9ce668c5344a960478bce4a63cf74315, type: 3}
-  - {fileID: 8300000, guid: e51964e8d7df43a4dacf05faa76390d9, type: 3}
+  - {fileID: 8300000, guid: 3a31adfc320875f40a898246e245a898, type: 3}

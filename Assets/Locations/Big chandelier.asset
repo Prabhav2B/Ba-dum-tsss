@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b57b9b92e757b9248ae424e847f4a5b9, type: 3}
-  m_Name: WaterCooler
+  m_Name: Big chandelier
   m_EditorClassIdentifier: 
   locationLine:
-  - {fileID: 8300000, guid: 24fd7c81ad1bbd149b400aa1d4b1f5a8, type: 3}
+  - {fileID: 8300000, guid: 74f2ecd434b977c448c5d4d8974b738e, type: 3}

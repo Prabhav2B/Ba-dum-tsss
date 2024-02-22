@@ -7,8 +7,8 @@ using UnityEngine;
 public class LocationScriptableObject : ScriptableObject
 {
     //[SerializeField] string locationName;
-    public AudioClip[] LocationLines => locationLine; 
+    public AudioClip[] LocationLines => locationLine;
     [SerializeField] AudioClip[] locationLine;
-    public Sprite LocationHint => locationHint; 
-    [SerializeField] Sprite locationHint;
+    public Sprite LocationImage => locationImage;
+    [SerializeField] Sprite locationImage;
 }
